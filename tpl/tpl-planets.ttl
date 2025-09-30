@@ -1,0 +1,42 @@
+@prefix : <http://data.treehouse.example/> .
+@prefix tpl: <http://data.treehouse.example/tpl/> .
+@prefix ottr: <http://ns.ottr.xyz/0.4/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+tpl:Planet[ 
+    ! ottr:IRI ?planet_uri,
+    xsd:string ?planet,
+    xsd:integer ?number_of_moons,
+    ?mean_temperature,
+    ?length_of_day_rounded,
+    ?orbital_period
+ ] :: {
+    ottr:Triple(?planet_uri, rdf:type, :Planet), 
+    ottr:Triple(?planet_uri, rdf:type, owl:NamedIndividual),
+    ottr:Triple(?planet_uri, rdfs:label, ?planet),
+    ottr:Triple(?planet_uri, :memberOf, :SolarSystem),
+    ottr:Triple(?planet_uri, :meanTemperature, ?mean_temperature),
+    ottr:Triple(?planet_uri, :numberOfMoons, ?number_of_moons),
+    ottr:Triple(?planet_uri, :lengthOfDay, ?length_of_day_rounded),
+    ottr:Triple(?planet_uri, :orbitalPeriod, ?orbital_period)
+} .
+
+
+tpl:Satellite[ 
+    ottr:IRI ?planet_uri,
+    ! ottr:IRI ?satellite_uri,
+    xsd:string ?name,
+    ?albedo, 
+    ?radius
+ ] :: {
+    ottr:Triple(?satellite_uri, rdf:type, :NaturalSatellite), 
+    ottr:Triple(?satellite_uri, rdf:type, owl:NamedIndividual),
+    ottr:Triple(?satellite_uri, :orbits, ?planet_uri), 
+    ottr:Triple(?satellite_uri, rdfs:label, ?name),
+    ottr:Triple(?satellite_uri, :albedo, ?albedo), 
+    ottr:Triple(?satellite_uri, :radius, ?radius)
+} .
