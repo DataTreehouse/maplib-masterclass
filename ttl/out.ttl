@@ -3,6 +3,39 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+dt: a owl:Ontology ;
+    rdfs:label "Astronomy lite"@en,
+        "Astronomi"@nb ;
+    rdfs:comment "A simple ontology for astronomical concepts, used for demonstrational purposes.e"@en,
+        "En enkel ontologi for astronomiske konsepter, brukt i demonstasjonsøyemed."@nb .
+
+dt:DwarfPlanet a owl:Class ;
+    rdfs:subClassOf dt:AstronomicalBody .
+
+dt:Mercury a dt:HotWorld,
+        dt:Planet,
+        owl:NamedIndividual ;
+    rdfs:label "Mercury" ;
+    dt:lengthOfDay 4.2226e+03 ;
+    dt:meanTemperature "167"^^xsd:long ;
+    dt:memberOf dt:SolarSystem ;
+    dt:orbitalPeriod 8.8e+01 .
+
+dt:PlanetraySystem a owl:Class ;
+    rdfs:subClassOf dt:AstronomicalObject .
+
+dt:Star a owl:Class ;
+    rdfs:subClassOf dt:AstronomicalBody .
+
+dt:Venus a dt:HotWorld,
+        dt:Planet,
+        owl:NamedIndividual ;
+    rdfs:label "Venus" ;
+    dt:lengthOfDay 2.802e+03 ;
+    dt:meanTemperature "464"^^xsd:long ;
+    dt:memberOf dt:SolarSystem ;
+    dt:orbitalPeriod 2.247e+02 .
+
 dt:Adrastea a dt:NaturalSatellite,
         owl:NamedIndividual ;
     rdfs:label "Adrastea" ;
@@ -90,6 +123,9 @@ dt:Ariel a dt:NaturalSatellite,
     dt:memberOf dt:SolarSystem ;
     dt:orbits dt:Uranus ;
     dt:radius "578.9±0.6" .
+
+dt:AstronomicalObject a owl:Class ;
+    rdfs:label "Astronomical Object"@nb .
 
 dt:Atlas a dt:NaturalSatellite,
         owl:NamedIndividual ;
@@ -282,6 +318,16 @@ dt:Dione a dt:NaturalSatellite,
     dt:memberOf dt:SolarSystem ;
     dt:orbits dt:Saturn ;
     dt:radius "561.70±0.45" .
+
+dt:Earth a dt:Planet,
+        dt:TemperateWorld,
+        owl:NamedIndividual ;
+    rdfs:label "Earth" ;
+    dt:lengthOfDay 2.4e+01 ;
+    dt:meanTemperature "15"^^xsd:long ;
+    dt:memberOf dt:SolarSystem ;
+    dt:moon dt:Moon ;
+    dt:orbitalPeriod 3.652e+02 .
 
 dt:Elara a dt:NaturalSatellite,
         owl:NamedIndividual ;
@@ -706,15 +752,6 @@ dt:Megaclite a dt:NaturalSatellite,
     dt:memberOf dt:SolarSystem ;
     dt:orbits dt:Jupiter ;
     dt:radius "2.7" .
-
-dt:Mercury a dt:Planet,
-        owl:NamedIndividual ;
-    rdfs:label "Mercury" ;
-    dt:lengthOfDay 4.2226e+03 ;
-    dt:meanTemperature "167"^^xsd:long ;
-    dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 0 ;
-    dt:orbitalPeriod 8.8e+01 .
 
 dt:Methone a dt:NaturalSatellite,
         owl:NamedIndividual ;
@@ -1420,15 +1457,6 @@ dt:Umbriel a dt:NaturalSatellite,
     dt:orbits dt:Uranus ;
     dt:radius "584.7±2.8" .
 
-dt:Venus a dt:Planet,
-        owl:NamedIndividual ;
-    rdfs:label "Venus" ;
-    dt:lengthOfDay 2.802e+03 ;
-    dt:meanTemperature "464"^^xsd:long ;
-    dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 0 ;
-    dt:orbitalPeriod 2.247e+02 .
-
 dt:Ymir a dt:NaturalSatellite,
         owl:NamedIndividual ;
     rdfs:label "Ymir" ;
@@ -1437,66 +1465,242 @@ dt:Ymir a dt:NaturalSatellite,
     dt:orbits dt:Saturn ;
     dt:radius "9" .
 
-dt:Earth a dt:Planet,
-        owl:NamedIndividual ;
-    rdfs:label "Earth" ;
-    dt:lengthOfDay 2.4e+01 ;
-    dt:meanTemperature "15"^^xsd:long ;
-    dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 1 ;
-    dt:orbitalPeriod 3.652e+02 .
-
 dt:Mars a dt:Planet,
+        dt:TemperateWorld,
         owl:NamedIndividual ;
     rdfs:label "Mars" ;
     dt:lengthOfDay 2.47e+01 ;
     dt:meanTemperature "-65"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 2 ;
+    dt:moon dt:Deimos,
+        dt:Phobos ;
     dt:orbitalPeriod 6.87e+02 .
 
-dt:Pluto a dt:Planet,
+dt:AstronomicalBody a owl:Class ;
+    rdfs:label "Astronomical Body"@en .
+
+dt:Pluto a dt:FrozenWorld,
+        dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Pluto" ;
     dt:lengthOfDay 1.533e+02 ;
     dt:meanTemperature "-225"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 5 ;
+    dt:moon dt:Charon,
+        dt:Hydra,
+        dt:Kerberos,
+        dt:Nix,
+        dt:Styx ;
     dt:orbitalPeriod 9.056e+04 .
 
-dt:Neptune a dt:Planet,
+dt:Planet a owl:Class ;
+    rdfs:subClassOf dt:AstronomicalBody .
+
+dt:Neptune a dt:FrozenWorld,
+        dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Neptune" ;
     dt:lengthOfDay 1.61e+01 ;
     dt:meanTemperature "-200"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 14 ;
+    dt:moon dt:Despina,
+        dt:Galatea,
+        dt:Halimede,
+        dt:Laomedeia,
+        dt:Larissa,
+        dt:Naiad,
+        dt:Nereid,
+        dt:Neso,
+        dt:Proteus,
+        dt:Psamathe,
+        dt:S-2004-N1,
+        dt:Sao,
+        dt:Thalassa,
+        dt:Triton ;
     dt:orbitalPeriod 5.98e+04 .
 
-dt:Uranus a dt:Planet,
+dt:Uranus a dt:FrozenWorld,
+        dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Uranus" ;
     dt:lengthOfDay 1.72e+01 ;
     dt:meanTemperature "-195"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 27 ;
+    dt:moon dt:Ariel,
+        dt:Belinda,
+        dt:Bianca,
+        dt:Caliban,
+        dt:Cordelia,
+        dt:Cressida,
+        dt:Cupid,
+        dt:Desdemona,
+        dt:Ferdinand,
+        dt:Francisco,
+        dt:Juliet,
+        dt:Mab,
+        dt:Margaret,
+        dt:Miranda,
+        dt:Oberon,
+        dt:Ophelia,
+        dt:Perdita,
+        dt:Portia,
+        dt:Prospero,
+        dt:Puck,
+        dt:Rosalind,
+        dt:Setebos,
+        dt:Stephano,
+        dt:Sycorax,
+        dt:Titania,
+        dt:Trinculo,
+        dt:Umbriel ;
     dt:orbitalPeriod 3.0589e+04 .
 
-dt:Saturn a dt:Planet,
+dt:Saturn a dt:FrozenWorld,
+        dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Saturn" ;
     dt:lengthOfDay 1.07e+01 ;
     dt:meanTemperature "-140"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 62 ;
+    dt:moon dt:Aegaeon,
+        dt:Aegir,
+        dt:Albiorix,
+        dt:Anthe,
+        dt:Atlas,
+        dt:Bebhionn,
+        dt:Bergelmir,
+        dt:Bestla,
+        dt:Calypso,
+        dt:Daphnis,
+        dt:Dione,
+        dt:Enceladus,
+        dt:Epimetheus,
+        dt:Erriapus,
+        dt:Farbauti,
+        dt:Fenrir,
+        dt:Fornjot,
+        dt:Greip,
+        dt:Hati,
+        dt:Helene,
+        dt:Hyperion,
+        dt:Hyrrokkin,
+        dt:Iapetus,
+        dt:Ijiraq,
+        dt:Janus,
+        dt:Jarnsaxa,
+        dt:Kari,
+        dt:Kiviuq,
+        dt:Loge,
+        dt:Methone,
+        dt:Mimas,
+        dt:Mundilfari,
+        dt:Narvi,
+        dt:Paaliaq,
+        dt:Pallene,
+        dt:Pan,
+        dt:Pandora,
+        dt:Phoebe,
+        dt:Polydeuces,
+        dt:Prometheus,
+        dt:Rhea,
+        dt:S-2004-S12,
+        dt:S-2004-S13,
+        dt:S-2004-S17,
+        dt:S-2004-S7,
+        dt:S-2006-S1,
+        dt:S-2006-S3,
+        dt:S-2007-S2,
+        dt:S-2007-S3,
+        dt:Siarnaq,
+        dt:Skathi,
+        dt:Skoll,
+        dt:Surtur,
+        dt:Suttungr,
+        dt:Tarqeq,
+        dt:Tarvos,
+        dt:Telesto,
+        dt:Tethys,
+        dt:Thrymr,
+        dt:Titan,
+        dt:Ymir ;
     dt:orbitalPeriod 1.0747e+04 .
 
-dt:Jupiter a dt:Planet,
+dt:Jupiter a dt:FrozenWorld,
+        dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Jupiter" ;
     dt:lengthOfDay 9.9e+00 ;
     dt:meanTemperature "-110"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 79 ;
+    dt:moon dt:Adrastea,
+        dt:Aitne,
+        dt:Amalthea,
+        dt:Ananke,
+        dt:Aoede,
+        dt:Arche,
+        dt:Autonoe,
+        dt:Callirrhoe,
+        dt:Callisto,
+        dt:Carme,
+        dt:Carpo,
+        dt:Chaldene,
+        dt:Cyllene,
+        dt:Elara,
+        dt:Erinome,
+        dt:Euanthe,
+        dt:Eukelade,
+        dt:Euporie,
+        dt:Europa,
+        dt:Eurydome,
+        dt:Ganymede,
+        dt:Harpalyke,
+        dt:Hegemone,
+        dt:Helike,
+        dt:Hermippe,
+        dt:Herse,
+        dt:Himalia,
+        dt:Io,
+        dt:Iocaste,
+        dt:Isonoe,
+        dt:Kale,
+        dt:Kallichore,
+        dt:Kalyke,
+        dt:Kore,
+        dt:Leda,
+        dt:Lysithea,
+        dt:Megaclite,
+        dt:Metis,
+        dt:Mneme,
+        dt:Orthosie,
+        dt:Pasiphae,
+        dt:Pasithee,
+        dt:Praxidike,
+        dt:S-2000-J11,
+        dt:S-2003-J10,
+        dt:S-2003-J12,
+        dt:S-2003-J15,
+        dt:S-2003-J16,
+        dt:S-2003-J18,
+        dt:S-2003-J19,
+        dt:S-2003-J2,
+        dt:S-2003-J23,
+        dt:S-2003-J3,
+        dt:S-2003-J4,
+        dt:S-2003-J5,
+        dt:S-2003-J9,
+        dt:S-2010-J1,
+        dt:S-2010-J2,
+        dt:S-2011-J1,
+        dt:S-2011-J2,
+        dt:Sinope,
+        dt:Sponde,
+        dt:Taygete,
+        dt:Thebe,
+        dt:Thelxinoe,
+        dt:Themisto,
+        dt:Thyone ;
     dt:orbitalPeriod 4.331e+03 .
+
+dt:NaturalSatellite a owl:Class ;
+    rdfs:subClassOf dt:AstronomicalBody .
 

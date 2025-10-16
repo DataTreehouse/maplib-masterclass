@@ -1,0 +1,112 @@
+@prefix dt: <http://data.treehouse.example/> .
+@prefix ns1: <https://github.com/DataTreehouse/maplib#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shapes: <http://data.treehouse.example/sh/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:maplib:report> a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_0>,
+        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_1>,
+        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_2>,
+        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_3>,
+        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_4>,
+        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_5>,
+        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_6>,
+        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_7>,
+        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_8> .
+
+shapes:Planet-aphelion a sh:PropertyShape ;
+    sh:datatype xsd:double ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path dt:aphelion .
+
+shapes:Planet-moon a sh:PropertyShape ;
+    sh:class dt:NaturalSatellite ;
+    sh:path dt:moon .
+
+shapes:Planet-perihelion a sh:PropertyShape ;
+    sh:datatype xsd:double ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path dt:perihelion .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_0> a sh:ValidationResult ;
+    sh:focusNode dt:Jupiter ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Jupiter ;
+    ns1:resultConforms false .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_1> a sh:ValidationResult ;
+    sh:focusNode dt:Pluto ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Pluto ;
+    ns1:resultConforms false .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_2> a sh:ValidationResult ;
+    sh:focusNode dt:Mercury ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Mercury ;
+    ns1:resultConforms false .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_3> a sh:ValidationResult ;
+    sh:focusNode dt:Mars ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Mars ;
+    ns1:resultConforms false .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_4> a sh:ValidationResult ;
+    sh:focusNode dt:Earth ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Earth ;
+    ns1:resultConforms false .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_5> a sh:ValidationResult ;
+    sh:focusNode dt:Uranus ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Uranus ;
+    ns1:resultConforms false .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_6> a sh:ValidationResult ;
+    sh:focusNode dt:Neptune ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Neptune ;
+    ns1:resultConforms false .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_7> a sh:ValidationResult ;
+    sh:focusNode dt:Saturn ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Saturn ;
+    ns1:resultConforms false .
+
+<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_8> a sh:ValidationResult ;
+    sh:focusNode dt:Venus ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Venus ;
+    ns1:resultConforms false .
+
+shapes:Planet a sh:NodeShape ;
+    sh:or ( shapes:Planet-aphelion shapes:Planet-perihelion ) ;
+    sh:property shapes:Planet-moon ;
+    sh:targetClass dt:Planet .
+

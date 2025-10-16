@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX : <http://data.treehouse.example/>
+
+[?x, :memberOf, ?z] :- [?x, :orbits, ?y], [?y, :memberOf, ?z] .
+[?x, :moon, ?y] :- [?y, :orbits, ?x] .
+
+[?star, rdf:type, :G-type-Star] :- 
+    [?star, rdf:type, :Star], 
+    [?star, :kelvinTemperature, ?temperature],
+    FILTER(?temperature >= 5200),
+    FILTER(?temperature < 6000).
+
+[?planet, rdf:type, :FrozenWorld] :- 
+  [?planet, :meanTemperature, ?temp] ,
+  FILTER(?temp < -100) .
+
+[?planet, rdf:type, :TemperateWorld] :- 
+  [?planet, :meanTemperature, ?temp] ,
+  FILTER(?temp >= -100 && ?temp <= 100) .
+
+[?planet, rdf:type, :HotWorld] :- 
+  [?planet, :meanTemperature, ?temp] ,
+  FILTER(?temp > 100) .
+

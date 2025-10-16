@@ -1,73 +1,52 @@
-import polars as pl
-pl.Config.set_fmt_str_lengths(150)
-
-from maplib import Mapping
+from maplib import Model
 from maplib import explore
 from maplib import IRI
 from utils import write_output
-
-ns = "http://data.treehouse.example/"
-ns_tpl = "http://data.treehouse.example/tpl/"
+from utils import print_count
 
 
-# DATA FROM: https://github.com/devstronomy/nasa-data-scraper/tree/master
-
-# Read planet CSV
-df_planets = pl.read_csv("data/planets.csv")
-
-# Create subject URI for planets
-df_planets = df_planets.with_columns(
-    (pl.lit(ns) + pl.col("planet")).alias("planet_uri")
-    )
-
-# Chose columns to play with
-df_planets = df_planets.select(
-    ["planet", 
-     "planet_uri", 
-     "mean_temperature",
-     "length_of_day",
-     "orbital_period"
-     ])
+import parse_data as data
 
 
-# Serialise data frame to RDF using OTTR templates
-with open("tpl/tpl-planets.ttl", "r") as file:
+# Serialise data frame to RDF using OTTR template for planets
+with open("tpl/tpl.ttl", "r") as file:
     tpl = file.read()
-m = Mapping(tpl)
 
-# Show default templateing
-# tmp_tpl = m.expand_default(df_planets, "planet_uri")
+m = Model()
+m.add_template(tpl)
+
+# Kick-start building templates with expand_default
+# tmp_tpl = m.expand_default(data.planets(), "planet_uri")
 # print(tmp_tpl)
 
-m.expand(ns_tpl + "Planet", df_planets)
+
+m.map(data.ns_tpl + "Planet", data.planets())
+m.map(data.ns_tpl + "Satellite", data.satellites())
 
 
-########################################################### NAT.SAT.
+print_count("mapping", m)
 
-df_satellites = pl.read_csv("data/satellites.csv")
-df_satellites = df_satellites.with_columns(
-    (pl.lit(ns) + pl.col("planet")).alias("planet_uri")
-)
-df_satellites = df_satellites.with_columns(
-    (pl.lit(ns) + pl.col("name").str.replace_all("/", "-")).str.replace_all(" ", "-").alias("satellite_uri")
-)
-df_satellites = df_satellites.select(
-    ["name", "planet_uri", "satellite_uri", "albedo", "radius"]
-    )
+###########
+## Rules ##
+########### 
 
-m.expand(ns_tpl + "Satellite", df_satellites)
-
-
-write_output(m, "ttl/out_merged.ttl")
-
-
-######################################## RULES
-
-with open("ttl/rule.dl", "r") as file:
+with open("ttl/rule.dlog", "r") as file:
     rules = file.read()
 
-m.add_ruleset(rules)
-m.infer()
+m.infer(rules)
 
-write_output(m, "ttl/out_inferred.ttl")
+print_count("inference", m)
 
+####################################### MERGE IN ONTOLOGY
+
+m.read("ttl/ast.ttl")
+
+####################################### VALIDATION
+
+m.read("ttl/sh.ttl", graph=data.ns_sh)
+report = m.validate(shape_graph=data.ns_sh)
+
+write_output(report.graph(), "ttl/report.ttl")
+
+
+write_output(m, "ttl/out.ttl")

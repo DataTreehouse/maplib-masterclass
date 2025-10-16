@@ -9,7 +9,6 @@ dt:Mercury a dt:Planet,
     dt:lengthOfDay 4.2226e+03 ;
     dt:meanTemperature "167"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 0 ;
     dt:orbitalPeriod 8.8e+01 .
 
 dt:Venus a dt:Planet,
@@ -18,7 +17,6 @@ dt:Venus a dt:Planet,
     dt:lengthOfDay 2.802e+03 ;
     dt:meanTemperature "464"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 0 ;
     dt:orbitalPeriod 2.247e+02 .
 
 dt:Adrastea a dt:NaturalSatellite,
@@ -308,7 +306,6 @@ dt:Earth a dt:Planet,
     dt:meanTemperature "15"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
     dt:moon dt:Moon ;
-    dt:numberOfMoons 1 ;
     dt:orbitalPeriod 3.652e+02 .
 
 dt:Elara a dt:NaturalSatellite,
@@ -1455,7 +1452,6 @@ dt:Mars a dt:Planet,
     dt:memberOf dt:SolarSystem ;
     dt:moon dt:Deimos,
         dt:Phobos ;
-    dt:numberOfMoons 2 ;
     dt:orbitalPeriod 6.87e+02 .
 
 dt:Pluto a dt:Planet,
@@ -1469,7 +1465,6 @@ dt:Pluto a dt:Planet,
         dt:Kerberos,
         dt:Nix,
         dt:Styx ;
-    dt:numberOfMoons 5 ;
     dt:orbitalPeriod 9.056e+04 .
 
 dt:Neptune a dt:Planet,
@@ -1492,7 +1487,6 @@ dt:Neptune a dt:Planet,
         dt:Sao,
         dt:Thalassa,
         dt:Triton ;
-    dt:numberOfMoons 14 ;
     dt:orbitalPeriod 5.98e+04 .
 
 dt:Uranus a dt:Planet,
@@ -1528,7 +1522,6 @@ dt:Uranus a dt:Planet,
         dt:Titania,
         dt:Trinculo,
         dt:Umbriel ;
-    dt:numberOfMoons 27 ;
     dt:orbitalPeriod 3.0589e+04 .
 
 dt:Saturn a dt:Planet,
@@ -1598,7 +1591,6 @@ dt:Saturn a dt:Planet,
         dt:Thrymr,
         dt:Titan,
         dt:Ymir ;
-    dt:numberOfMoons 62 ;
     dt:orbitalPeriod 1.0747e+04 .
 
 dt:Jupiter a dt:Planet,
@@ -1674,6 +1666,5 @@ dt:Jupiter a dt:Planet,
         dt:Thelxinoe,
         dt:Themisto,
         dt:Thyone ;
-    dt:numberOfMoons 79 ;
     dt:orbitalPeriod 4.331e+03 .
 

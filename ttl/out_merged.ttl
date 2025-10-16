@@ -625,7 +625,6 @@ dt:Mercury a dt:Planet,
     dt:lengthOfDay 4.2226e+03 ;
     dt:meanTemperature "167"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 0 ;
     dt:orbitalPeriod 8.8e+01 .
 
 dt:Methone a dt:NaturalSatellite,
@@ -1250,7 +1249,6 @@ dt:Venus a dt:Planet,
     dt:lengthOfDay 2.802e+03 ;
     dt:meanTemperature "464"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 0 ;
     dt:orbitalPeriod 2.247e+02 .
 
 dt:Ymir a dt:NaturalSatellite,
@@ -1266,7 +1264,6 @@ dt:Earth a dt:Planet,
     dt:lengthOfDay 2.4e+01 ;
     dt:meanTemperature "15"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 1 ;
     dt:orbitalPeriod 3.652e+02 .
 
 dt:Mars a dt:Planet,
@@ -1275,7 +1272,6 @@ dt:Mars a dt:Planet,
     dt:lengthOfDay 2.47e+01 ;
     dt:meanTemperature "-65"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 2 ;
     dt:orbitalPeriod 6.87e+02 .
 
 dt:Pluto a dt:Planet,
@@ -1284,7 +1280,6 @@ dt:Pluto a dt:Planet,
     dt:lengthOfDay 1.533e+02 ;
     dt:meanTemperature "-225"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 5 ;
     dt:orbitalPeriod 9.056e+04 .
 
 dt:Neptune a dt:Planet,
@@ -1293,7 +1288,6 @@ dt:Neptune a dt:Planet,
     dt:lengthOfDay 1.61e+01 ;
     dt:meanTemperature "-200"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 14 ;
     dt:orbitalPeriod 5.98e+04 .
 
 dt:Uranus a dt:Planet,
@@ -1302,7 +1296,6 @@ dt:Uranus a dt:Planet,
     dt:lengthOfDay 1.72e+01 ;
     dt:meanTemperature "-195"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 27 ;
     dt:orbitalPeriod 3.0589e+04 .
 
 dt:Saturn a dt:Planet,
@@ -1311,7 +1304,6 @@ dt:Saturn a dt:Planet,
     dt:lengthOfDay 1.07e+01 ;
     dt:meanTemperature "-140"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 62 ;
     dt:orbitalPeriod 1.0747e+04 .
 
 dt:Jupiter a dt:Planet,
@@ -1320,6 +1312,5 @@ dt:Jupiter a dt:Planet,
     dt:lengthOfDay 9.9e+00 ;
     dt:meanTemperature "-110"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:numberOfMoons 79 ;
     dt:orbitalPeriod 4.331e+03 .
 

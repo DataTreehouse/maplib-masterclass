@@ -1,5 +1,5 @@
-@prefix ns1: <http://data.eksempel.no/> .
-@prefix rule: <http://data.eksempel.no/sh/> .
+@prefix : <http://data.treehouse.example/> .
+@prefix rule: <http://data.treehouse.example/sh/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,22 +7,25 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-rule:Album a sh:NodeShape ;
-    sh:targetClass ns1:Album ;
-    sh:property rule:Album-artist , rule:Album-title, rule:term .
+rule:Planet a sh:NodeShape ;
+    sh:targetClass :Planet ;
+    sh:property rule:Planet-moon ;
+    sh:or (
+        rule:Planet-aphelion 
+        rule:Planet-perihelion
+    ) .
 
-rule:Album-artist a sh:PropertyShape ;
-    sh:path ns1:artist ;
-    sh:class ns1:Artist ;
-    sh:minCount 1 . 
 
-rule:Album-title a sh:PropertyShape ;
-    sh:path ns1:title ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:maxCount 1 .
+rule:Planet-moon a sh:PropertyShape ;
+    sh:path :moon ;
+    sh:class :NaturalSatellite .
 
-rule:term 
-    sh:path [
-        sh:alternativePath (rdfs:label skos:prefLabel) ;
-    ] .
+rule:Planet-aphelion a sh:PropertyShape ;
+    sh:path :aphelion ;
+    sh:datatype xsd:double ;
+    sh:minCount 1 ; sh:maxCount 1 .
+
+rule:Planet-perihelion a sh:PropertyShape ;
+    sh:path :perihelion ;
+    sh:datatype xsd:double ;
+    sh:minCount 1 ; sh:maxCount 1 .
