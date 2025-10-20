@@ -97,10 +97,16 @@
     {\scriptsize{\textcolor{cappurple}{#1}}}
 }
 
+
 \newenvironment{code}{
+\setlength\linenumbersep{-.1cm} 
+\setcounter{linenumber}{1}
+\begin{internallinenumbers}
     \begin{tcolorbox}
             }{
     \end{tcolorbox}
+\end{internallinenumbers}
+\AfterEndEnvironment{verbatim}{\nolinenumbers}
 }
 
 \newcommand{\presentationframev}[2]{

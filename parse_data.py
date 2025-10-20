@@ -16,7 +16,7 @@ def planets():
 
     # Create subject URI for planets
     df_planets = df_planets.with_columns(
-        (pl.lit(ns) + pl.col("planet")).alias("planet_uri")
+        (ns + pl.col("planet")).alias("planet_uri")
         )
 
     # Chose columns to play with

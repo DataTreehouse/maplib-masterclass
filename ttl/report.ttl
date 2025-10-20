@@ -7,15 +7,15 @@
 
 <urn:maplib:report> a sh:ValidationReport ;
     sh:conforms false ;
-    sh:result <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_0>,
-        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_1>,
-        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_2>,
-        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_3>,
-        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_4>,
-        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_5>,
-        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_6>,
-        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_7>,
-        <urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_8> .
+    sh:result <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_0>,
+        <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_1>,
+        <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_2>,
+        <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_3>,
+        <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_4>,
+        <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_5>,
+        <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_6>,
+        <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_7>,
+        <urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_8> .
 
 shapes:Planet-aphelion a sh:PropertyShape ;
     sh:datatype xsd:double ;
@@ -33,55 +33,7 @@ shapes:Planet-perihelion a sh:PropertyShape ;
     sh:minCount 1 ;
     sh:path dt:perihelion .
 
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_0> a sh:ValidationResult ;
-    sh:focusNode dt:Jupiter ;
-    sh:resultSeverity sh:Violation ;
-    sh:sourceConstraintComponent sh:OrConstraintComponent ;
-    sh:sourceShape shapes:Planet ;
-    sh:value dt:Jupiter ;
-    ns1:resultConforms false .
-
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_1> a sh:ValidationResult ;
-    sh:focusNode dt:Pluto ;
-    sh:resultSeverity sh:Violation ;
-    sh:sourceConstraintComponent sh:OrConstraintComponent ;
-    sh:sourceShape shapes:Planet ;
-    sh:value dt:Pluto ;
-    ns1:resultConforms false .
-
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_2> a sh:ValidationResult ;
-    sh:focusNode dt:Mercury ;
-    sh:resultSeverity sh:Violation ;
-    sh:sourceConstraintComponent sh:OrConstraintComponent ;
-    sh:sourceShape shapes:Planet ;
-    sh:value dt:Mercury ;
-    ns1:resultConforms false .
-
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_3> a sh:ValidationResult ;
-    sh:focusNode dt:Mars ;
-    sh:resultSeverity sh:Violation ;
-    sh:sourceConstraintComponent sh:OrConstraintComponent ;
-    sh:sourceShape shapes:Planet ;
-    sh:value dt:Mars ;
-    ns1:resultConforms false .
-
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_4> a sh:ValidationResult ;
-    sh:focusNode dt:Earth ;
-    sh:resultSeverity sh:Violation ;
-    sh:sourceConstraintComponent sh:OrConstraintComponent ;
-    sh:sourceShape shapes:Planet ;
-    sh:value dt:Earth ;
-    ns1:resultConforms false .
-
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_5> a sh:ValidationResult ;
-    sh:focusNode dt:Uranus ;
-    sh:resultSeverity sh:Violation ;
-    sh:sourceConstraintComponent sh:OrConstraintComponent ;
-    sh:sourceShape shapes:Planet ;
-    sh:value dt:Uranus ;
-    ns1:resultConforms false .
-
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_6> a sh:ValidationResult ;
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_0> a sh:ValidationResult ;
     sh:focusNode dt:Neptune ;
     sh:resultSeverity sh:Violation ;
     sh:sourceConstraintComponent sh:OrConstraintComponent ;
@@ -89,7 +41,7 @@ shapes:Planet-perihelion a sh:PropertyShape ;
     sh:value dt:Neptune ;
     ns1:resultConforms false .
 
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_7> a sh:ValidationResult ;
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_1> a sh:ValidationResult ;
     sh:focusNode dt:Saturn ;
     sh:resultSeverity sh:Violation ;
     sh:sourceConstraintComponent sh:OrConstraintComponent ;
@@ -97,12 +49,60 @@ shapes:Planet-perihelion a sh:PropertyShape ;
     sh:value dt:Saturn ;
     ns1:resultConforms false .
 
-<urn:maplib:tr70cc3573-7fd4-48d7-b604-8e917e3ce8b4_8> a sh:ValidationResult ;
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_2> a sh:ValidationResult ;
+    sh:focusNode dt:Jupiter ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Jupiter ;
+    ns1:resultConforms false .
+
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_3> a sh:ValidationResult ;
+    sh:focusNode dt:Mercury ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Mercury ;
+    ns1:resultConforms false .
+
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_4> a sh:ValidationResult ;
+    sh:focusNode dt:Mars ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Mars ;
+    ns1:resultConforms false .
+
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_5> a sh:ValidationResult ;
     sh:focusNode dt:Venus ;
     sh:resultSeverity sh:Violation ;
     sh:sourceConstraintComponent sh:OrConstraintComponent ;
     sh:sourceShape shapes:Planet ;
     sh:value dt:Venus ;
+    ns1:resultConforms false .
+
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_6> a sh:ValidationResult ;
+    sh:focusNode dt:Pluto ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Pluto ;
+    ns1:resultConforms false .
+
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_7> a sh:ValidationResult ;
+    sh:focusNode dt:Earth ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Earth ;
+    ns1:resultConforms false .
+
+<urn:maplib:treed8f3d7-f691-4195-81dd-908024ec0e37_8> a sh:ValidationResult ;
+    sh:focusNode dt:Uranus ;
+    sh:resultSeverity sh:Violation ;
+    sh:sourceConstraintComponent sh:OrConstraintComponent ;
+    sh:sourceShape shapes:Planet ;
+    sh:value dt:Uranus ;
     ns1:resultConforms false .
 
 shapes:Planet a sh:NodeShape ;

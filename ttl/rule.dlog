@@ -8,7 +8,7 @@ PREFIX : <http://data.treehouse.example/>
     [?star, rdf:type, :Star], 
     [?star, :kelvinTemperature, ?temperature],
     FILTER(?temperature >= 5200),
-    FILTER(?temperature < 6000).
+    FILTER(?temperature < 6000) .
 
 [?planet, rdf:type, :FrozenWorld] :- 
   [?planet, :meanTemperature, ?temp] ,

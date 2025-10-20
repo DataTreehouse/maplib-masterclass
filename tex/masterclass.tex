@@ -5,7 +5,7 @@
 \author{Veronika Heimsbakk}
 
 \usepackage{hyperref}
-
+\usepackage{lineno}
 \usepackage{color, colortbl}
 \usetikzlibrary{shapes}
 
@@ -118,8 +118,185 @@ SHACL\\
 \Huge{\textbf{DATA}}
 \end{frame}
 
+\begin{frame}
+\begin{itemize}
+\item[\faGithub{}] \texttt{\href{https://github.com/devstronomy/nasa-data-scraper/tree/master}{devstronomy/nasa-data-scraper}}
+\item[\faGlobe{}] \texttt{\href{https://www.kaggle.com/datasets/waqi786/stars-dataset/data}{kaggle/waqi786/stars-dataset/}}
+\end{itemize}
+
+\begin{minipage}{0.45\textwidth}
+\includegraphics[width=0.8\textwidth]{img/stars.png}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\includegraphics[width=0.8\textwidth]{img/moons.png}
+\end{minipage}
+\includegraphics[width=0.8\textwidth]{img/planets.png}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Data frames}
+\includegraphics[width=0.3\textwidth]{img/polars.png}\\
+\faGlobe{} \texttt{\url{https://pola.rs/}}
+
+\begin{code}
+\begin{verbatim}
+  df_planets = pl.read_csv("data/planets.csv")
+
+  # Create URI for subject
+  df_planets = df_planets.with_columns(
+    (ns + pl.col("planet")).alias("planet_uri")
+  )
+\end{verbatim}
+\end{code}
+
+\end{frame}
+
+\begin{frame}[fragile]{Data frames}
+
+\begin{code}
+\begin{verbatim}
+  df_planets = df_planets.select(
+    ["planet", 
+    "planet_uri", # the new column we just made :-)
+    "mean_temperature",
+    "length_of_day",
+    "orbital_period"]
+  )
+\end{verbatim}
+\end{code}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAPPING
+
+\begin{frame}
+\Huge{\textbf{MAPPING}}
+\end{frame}
+
+\begin{frame}{Reasonable Ontology Templates}
+
+\begin{minipage}{0.10\textwidth}
+\includegraphics[width=\textwidth]{img/ottr.jpg}
+\end{minipage}
+\hspace{5pt}
+\begin{minipage}{0.65\textwidth}
+Aims to provide lightweight syntax for defining templates for RDF.\\Serialising chunks of data in a defined pattern. \faGlobe{} \texttt{\url{https://ottr.xyz/}}
+\end{minipage}
+
+\vspace{15pt}
+
+We're diving into stOTTR (Terse Syntax for Reasonable Ontology Template):
+\begin{itemize}
+\item terms
+\item types
+\item instances
+\item template example
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{stOTTR terms}
+A term is, syntactically, either a variable, a constant or a list of terms.
+
+\begin{code}
+\begin{verbatim}
+  ?planet_uri
+  ?PLANET
+
+  <http://data-treehouse.com/example>
+  ex:mean_temperature
+
+  []
+  _:b
+
+  "Jupiter"
+  "4879"^^xsd:integer
+  57.9
+  5427
+  true
+
+  ("Phobos", "Deimos")
+  (("Phobos", "Deimos"), ex:Mars, (0.642))
+\end{verbatim}
+\end{code}
+\end{frame}
+
+\begin{frame}[fragile]{stOTTR types}
+A type, like the type of a term, is either a basic type, a list type or a LUB-type (least upper bound).
+
+\begin{code}
+\begin{verbatim}
+  xsd:double
+  owl:Class
+  rdfs:Resource
+  ottr:IRI
+
+  List<xsd:string>
+  List<NEList<xsd:integer>>
+
+  LUB<xsd:string>
+  LUB<owl:Class>
+\end{verbatim}
+\end{code}
+\end{frame}
+
+\begin{frame}[fragile]{stOTTR instances}
+
+stOTTR instances are instructions on how instance data will be serialised. We populate template signatures with actual data.
+
+\begin{code}
+\begin{verbatim}
+  ottr:Triple(:subject, :predicate, :object) .
+  tpl:Satellite(ex:Mars, ex:Phobos) .
+  tpl:Star( , ) .
+  cross | tpl:Planet(ex:Mercury, ++("Merkur"@no, "Mercury"@en)) .
+\end{verbatim}
+\end{code}
+\end{frame}
+
+
+\begin{frame}[fragile]{stOTTR template example}
+
+Remember our \texttt{df\_planet} data frame, with selected columns: \texttt{planet}, \texttt{planet\_uri}, \texttt{mean\_temperature}, \texttt{length\_of\_day}, and \texttt{orbital\_period}.
+
+\begin{code}
+\begin{verbatim}
+  tpl:Planet[
+    ! ottr:IRI ?planet_uri , 
+    xsd:string ?planet ,
+    ?mean_temperature ,
+    ? ?length_of_day ,
+    ?orbital_period
+  ] :: {
+    ottr:Triple(?planet_uri, rdf:type, :Planet), 
+    ottr:Triple(?planet_uri, rdf:type, owl:NamedIndividual),
+    ottr:Triple(?planet_uri, rdfs:label, ?planet),
+    ottr:Triple(?planet_uri, :memberOf, :SolarSystem),
+    ottr:Triple(?planet_uri, :meanTemperature, ?mean_temperature),
+    ottr:Triple(?planet_uri, :lengthOfDay, ?length_of_day),
+    ottr:Triple(?planet_uri, :orbitalPeriod, ?orbital_period)
+  } .
+\end{verbatim}
+\end{code}
+\end{frame}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
 
 \begin{frame}
 \Huge{\textbf{RDF}}
