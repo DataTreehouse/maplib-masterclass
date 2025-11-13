@@ -1,24 +1,25 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX : <http://data.treehouse.example/>
 
-[?x, :memberOf, ?z] :- [?x, :orbits, ?y], [?y, :memberOf, ?z] .
+# Inverse of orbits is moon
 [?x, :moon, ?y] :- [?y, :orbits, ?x] .
 
-[?star, rdf:type, :G-type-Star] :- 
-    [?star, rdf:type, :Star], 
-    [?star, :kelvinTemperature, ?temperature],
-    FILTER(?temperature >= 5200),
-    FILTER(?temperature < 6000) .
+# If something orbits a thing that is memberOf ?z, then that something is also a member of ?z
+[?x, :memberOf, ?z] :- [?x, :orbits, ?y], [?y, :memberOf, ?z] .
 
+# Infer classification of planets based on mean temperature into frozen, temperate and hot worlds.
 [?planet, rdf:type, :FrozenWorld] :- 
+  [?planet, rdf:type, :Planet], 
   [?planet, :meanTemperature, ?temp] ,
   FILTER(?temp < -100) .
 
 [?planet, rdf:type, :TemperateWorld] :- 
+  [?planet, rdf:type, :Planet], 
   [?planet, :meanTemperature, ?temp] ,
   FILTER(?temp >= -100 && ?temp <= 100) .
 
 [?planet, rdf:type, :HotWorld] :- 
+  [?planet, rdf:type, :Planet], 
   [?planet, :meanTemperature, ?temp] ,
   FILTER(?temp > 100) .
 

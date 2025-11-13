@@ -1,0 +1,150 @@
+{
+  "index_settings": {
+    "docstore_compression": "lz4",
+    "docstore_blocksize": 16384
+  },
+  "segments": [
+    {
+      "segment_id": "c601dff6-edd6-415a-b0a9-1d6c93b3387a",
+      "max_doc": 181,
+      "deletes": null
+    },
+    {
+      "segment_id": "37374504-a9c2-4a39-ba6f-732546db97e1",
+      "max_doc": 14,
+      "deletes": null
+    },
+    {
+      "segment_id": "7a51cfb3-0326-4b7d-bc3b-736ff25bd854",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "c73cf013-2137-4023-bf69-f8b74645f475",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "497e8647-8050-4ef8-b46c-f5c54a29f11d",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "d7494cf1-73a6-413f-978e-c3160c2d1fdc",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "cfa144c4-3417-468d-b2a3-c3cab50eb570",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "062eebea-1f8c-4739-a259-27a013ff45ba",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "bac987d4-c33d-43ef-a310-6d8607349431",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "56c8515f-e875-4d8a-8e51-00542c039ec3",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "67dc6ff2-5700-41e9-9a8e-cc732b155384",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "a642006a-56b6-4c72-92ba-296c63713a7e",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "8618138b-4596-410f-9959-1aafdf6db7d8",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "3ecf52b3-b09c-429b-8fba-7422b45252a3",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "e106e809-6d48-42ef-bc8b-2e4171dee555",
+      "max_doc": 1,
+      "deletes": null
+    },
+    {
+      "segment_id": "b4b24bbb-4a73-420b-bf07-bedd9aa5bf8b",
+      "max_doc": 1,
+      "deletes": null
+    }
+  ],
+  "schema": [
+    {
+      "name": "resource",
+      "type": "text",
+      "options": {
+        "stored": true,
+        "fast": false
+      }
+    },
+    {
+      "name": "subject_type",
+      "type": "u64",
+      "options": {
+        "indexed": false,
+        "fieldnorms": false,
+        "fast": false,
+        "stored": true
+      }
+    },
+    {
+      "name": "predicate_type",
+      "type": "u64",
+      "options": {
+        "indexed": false,
+        "fieldnorms": false,
+        "fast": false,
+        "stored": true
+      }
+    },
+    {
+      "name": "object_type",
+      "type": "u64",
+      "options": {
+        "indexed": false,
+        "fieldnorms": false,
+        "fast": false,
+        "stored": true
+      }
+    },
+    {
+      "name": "lang",
+      "type": "text",
+      "options": {
+        "stored": true,
+        "fast": false
+      }
+    },
+    {
+      "name": "object",
+      "type": "text",
+      "options": {
+        "indexing": {
+          "record": "basic",
+          "fieldnorms": true,
+          "tokenizer": "raw"
+        },
+        "stored": true,
+        "fast": false
+      }
+    }
+  ],
+  "opstamp": 225
+}

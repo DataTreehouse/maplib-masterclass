@@ -7,25 +7,22 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-rule:Planet a sh:NodeShape ;
-    sh:targetClass :Planet ;
-    sh:property rule:Planet-moon ;
+rule:AstronomicalBody a sh:NodeShape ;
+    sh:targetClass :AstronomicalBody ;
+    sh:property rule:AstronomicalBody-memberOf .
+
+rule:AstronomicalBody-memberOf a sh:PropertyShape ;
+    sh:path :memberOf ;
+    sh:minCount 1 ;
     sh:or (
-        rule:Planet-aphelion 
-        rule:Planet-perihelion
+        [ sh:class :PlanetarySystem ]
+        [ sh:class :StarCluster ]
     ) .
 
+rule:Planet a sh:NodeShape ;
+    sh:targetClass :Planet ;
+    sh:node rule:AstronomicalBody .
 
-rule:Planet-moon a sh:PropertyShape ;
-    sh:path :moon ;
-    sh:class :NaturalSatellite .
-
-rule:Planet-aphelion a sh:PropertyShape ;
-    sh:path :aphelion ;
-    sh:datatype xsd:double ;
-    sh:minCount 1 ; sh:maxCount 1 .
-
-rule:Planet-perihelion a sh:PropertyShape ;
-    sh:path :perihelion ;
-    sh:datatype xsd:double ;
-    sh:minCount 1 ; sh:maxCount 1 .
+rule:NaturalSatellite a sh:NodeShape ;
+    sh:targetClass :NaturalSatellite ;
+    sh:node rule:AstronomicalBody .

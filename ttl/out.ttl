@@ -3,17 +3,567 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-dt: a owl:Ontology ;
-    rdfs:label "Astronomy lite"@en,
-        "Astronomi"@nb ;
-    rdfs:comment "A simple ontology for astronomical concepts, used for demonstrational purposes.e"@en,
-        "En enkel ontologi for astronomiske konsepter, brukt i demonstasjonsøyemed."@nb .
+dt:Adrastea a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Adrastea" ;
+    dt:orbits dt:Jupiter .
 
-dt:DwarfPlanet a owl:Class ;
-    rdfs:subClassOf dt:AstronomicalBody .
+dt:Aegaeon a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Aegaeon" ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e-01 .
 
-dt:Mercury a dt:HotWorld,
-        dt:Planet,
+dt:Aegir a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Aegir" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Aitne a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Aitne" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.5e+00 .
+
+dt:Albiorix a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Albiorix" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 1.6e+01 .
+
+dt:Amalthea a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Amalthea" ;
+    dt:orbits dt:Jupiter .
+
+dt:Ananke a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Ananke" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.4e+01 .
+
+dt:Anthe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Anthe" ;
+    dt:orbits dt:Saturn ;
+    dt:radius 9e-01 .
+
+dt:Aoede a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Aoede" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2e+00 .
+
+dt:Arche a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Arche" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.5e+00 .
+
+dt:Ariel a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Ariel" ;
+    dt:orbits dt:Uranus .
+
+dt:Atlas a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Atlas" ;
+    dt:albedo 4e-01 ;
+    dt:orbits dt:Saturn .
+
+dt:Autonoe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Autonoe" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2e+00 .
+
+dt:Bebhionn a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Bebhionn" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Belinda a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Belinda" ;
+    dt:orbits dt:Uranus .
+
+dt:Bergelmir a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Bergelmir" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Bestla a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Bestla" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3.5e+00 .
+
+dt:Bianca a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Bianca" ;
+    dt:orbits dt:Uranus .
+
+dt:Caliban a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Caliban" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 3.6e+01 .
+
+dt:Callirrhoe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Callirrhoe" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 4.3e+00 .
+
+dt:Callisto a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Callisto" ;
+    dt:orbits dt:Jupiter .
+
+dt:Calypso a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Calypso" ;
+    dt:orbits dt:Saturn .
+
+dt:Carme a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Carme" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2.3e+01 .
+
+dt:Carpo a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Carpo" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.5e+00 .
+
+dt:Chaldene a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Chaldene" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.9e+00 .
+
+dt:Charon a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Charon" ;
+    dt:orbits dt:Pluto .
+
+dt:Cordelia a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Cordelia" ;
+    dt:albedo 7e-02 ;
+    dt:orbits dt:Uranus .
+
+dt:Cressida a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Cressida" ;
+    dt:orbits dt:Uranus .
+
+dt:Cupid a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Cupid" ;
+    dt:orbits dt:Uranus .
+
+dt:Cyllene a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Cyllene" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Daphnis a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Daphnis" ;
+    dt:orbits dt:Saturn .
+
+dt:Deimos a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Deimos" ;
+    dt:orbits dt:Mars .
+
+dt:Desdemona a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Desdemona" ;
+    dt:orbits dt:Uranus .
+
+dt:Despina a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Despina" ;
+    dt:albedo 9e-02 ;
+    dt:orbits dt:Neptune .
+
+dt:Dione a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Dione" ;
+    dt:orbits dt:Saturn .
+
+dt:Elara a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Elara" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 4.3e+01 .
+
+dt:Enceladus a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Enceladus" ;
+    dt:orbits dt:Saturn .
+
+dt:Epimetheus a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Epimetheus" ;
+    dt:orbits dt:Saturn .
+
+dt:Erinome a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Erinome" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.6e+00 .
+
+dt:Erriapus a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Erriapus" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 5e+00 .
+
+dt:Euanthe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Euanthe" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.5e+00 .
+
+dt:Eukelade a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Eukelade" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2e+00 .
+
+dt:Euporie a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Euporie" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Europa a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Europa" ;
+    dt:orbits dt:Jupiter .
+
+dt:Eurydome a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Eurydome" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.5e+00 .
+
+dt:Farbauti a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Farbauti" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 2.5e+00 .
+
+dt:Fenrir a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Fenrir" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 2e+00 .
+
+dt:Ferdinand a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Ferdinand" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 1e+01 .
+
+dt:Fornjot a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Fornjot" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Francisco a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Francisco" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 1.1e+01 .
+
+dt:Galatea a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Galatea" ;
+    dt:albedo 7.9e-02 ;
+    dt:orbits dt:Neptune .
+
+dt:Ganymede a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Ganymede" ;
+    dt:orbits dt:Jupiter .
+
+dt:Greip a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Greip" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Halimede a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Halimede" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Neptune ;
+    dt:radius 3.1e+01 .
+
+dt:Harpalyke a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Harpalyke" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2.2e+00 .
+
+dt:Hati a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Hati" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Hegemone a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Hegemone" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.5e+00 .
+
+dt:Helene a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Helene" ;
+    dt:orbits dt:Saturn .
+
+dt:Helike a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Helike" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2e+00 .
+
+dt:Hermippe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Hermippe" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2e+00 .
+
+dt:Herse a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Herse" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Himalia a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Himalia" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 8.5e+01 .
+
+dt:Hydra a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Hydra" ;
+    dt:albedo 3.5e-01 ;
+    dt:orbits dt:Pluto .
+
+dt:Hyperion a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Hyperion" ;
+    dt:albedo 3e-01 ;
+    dt:orbits dt:Saturn .
+
+dt:Hyrrokkin a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Hyrrokkin" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Iapetus a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Iapetus" ;
+    dt:albedo 6e-01 ;
+    dt:orbits dt:Saturn .
+
+dt:Ijiraq a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Ijiraq" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 6e+00 .
+
+dt:Io a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Io" ;
+    dt:orbits dt:Jupiter .
+
+dt:Iocaste a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Iocaste" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2.6e+00 .
+
+dt:Isonoe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Isonoe" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.9e+00 .
+
+dt:Janus a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Janus" ;
+    dt:orbits dt:Saturn .
+
+dt:Jarnsaxa a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Jarnsaxa" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Juliet a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Juliet" ;
+    dt:orbits dt:Uranus .
+
+dt:Kale a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Kale" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Kallichore a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Kallichore" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Kalyke a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Kalyke" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2.6e+00 .
+
+dt:Kari a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Kari" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Kerberos a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Kerberos" ;
+    dt:albedo 3.5e-01 ;
+    dt:orbits dt:Pluto ;
+    dt:radius 1.4e+01 .
+
+dt:Kiviuq a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Kiviuq" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 8e+00 .
+
+dt:Kore a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Kore" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Laomedeia a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Laomedeia" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Neptune ;
+    dt:radius 2.1e+01 .
+
+dt:Larissa a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Larissa" ;
+    dt:albedo 9.1e-02 ;
+    dt:orbits dt:Neptune .
+
+dt:Leda a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Leda" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+01 .
+
+dt:Loge a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Loge" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Lysithea a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Lysithea" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.8e+01 .
+
+dt:Mab a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Mab" ;
+    dt:orbits dt:Uranus .
+
+dt:Margaret a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Margaret" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 1e+01 .
+
+dt:Megaclite a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Megaclite" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2.7e+00 .
+
+dt:Mercury a dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Mercury" ;
     dt:lengthOfDay 4.2226e+03 ;
@@ -21,14 +571,574 @@ dt:Mercury a dt:HotWorld,
     dt:memberOf dt:SolarSystem ;
     dt:orbitalPeriod 8.8e+01 .
 
-dt:PlanetraySystem a owl:Class ;
-    rdfs:subClassOf dt:AstronomicalObject .
+dt:Methone a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Methone" ;
+    dt:orbits dt:Saturn .
 
-dt:Star a owl:Class ;
-    rdfs:subClassOf dt:AstronomicalBody .
+dt:Metis a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Metis" ;
+    dt:orbits dt:Jupiter .
 
-dt:Venus a dt:HotWorld,
-        dt:Planet,
+dt:Mimas a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Mimas" ;
+    dt:orbits dt:Saturn .
+
+dt:Miranda a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Miranda" ;
+    dt:orbits dt:Uranus .
+
+dt:Mneme a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Mneme" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Moon a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Moon" ;
+    dt:albedo 1.2e-01 ;
+    dt:orbits dt:Earth .
+
+dt:Mundilfari a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Mundilfari" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3.5e+00 .
+
+dt:Naiad a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Naiad" ;
+    dt:albedo 7.2e-02 ;
+    dt:orbits dt:Neptune .
+
+dt:Narvi a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Narvi" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3.5e+00 .
+
+dt:Nereid a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Nereid" ;
+    dt:albedo 1.55e-01 ;
+    dt:orbits dt:Neptune .
+
+dt:Neso a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Neso" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Neptune ;
+    dt:radius 3e+01 .
+
+dt:Nix a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Nix" ;
+    dt:albedo 3.5e-01 ;
+    dt:orbits dt:Pluto .
+
+dt:Oberon a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Oberon" ;
+    dt:orbits dt:Uranus .
+
+dt:Ophelia a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Ophelia" ;
+    dt:albedo 7e-02 ;
+    dt:orbits dt:Uranus .
+
+dt:Orthosie a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Orthosie" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Paaliaq a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Paaliaq" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 1.1e+01 .
+
+dt:Pallene a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Pallene" ;
+    dt:orbits dt:Saturn .
+
+dt:Pan a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Pan" ;
+    dt:albedo 5e-01 ;
+    dt:orbits dt:Saturn .
+
+dt:Pandora a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Pandora" ;
+    dt:albedo 5e-01 ;
+    dt:orbits dt:Saturn .
+
+dt:Pasiphae a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Pasiphae" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 3e+01 .
+
+dt:Pasithee a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Pasithee" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Perdita a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Perdita" ;
+    dt:orbits dt:Uranus .
+
+dt:Phobos a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Phobos" ;
+    dt:orbits dt:Mars .
+
+dt:Phoebe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Phoebe" ;
+    dt:orbits dt:Saturn .
+
+dt:Polydeuces a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Polydeuces" ;
+    dt:orbits dt:Saturn .
+
+dt:Portia a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Portia" ;
+    dt:orbits dt:Uranus .
+
+dt:Praxidike a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Praxidike" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 3.4e+00 .
+
+dt:Prometheus a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Prometheus" ;
+    dt:albedo 6e-01 ;
+    dt:orbits dt:Saturn .
+
+dt:Prospero a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Prospero" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 2.5e+01 .
+
+dt:Proteus a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Proteus" ;
+    dt:albedo 9.6e-02 ;
+    dt:orbits dt:Neptune .
+
+dt:Psamathe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Psamathe" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Neptune ;
+    dt:radius 2e+01 .
+
+dt:Puck a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Puck" ;
+    dt:orbits dt:Uranus .
+
+dt:Rhea a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Rhea" ;
+    dt:orbits dt:Saturn .
+
+dt:Rosalind a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Rosalind" ;
+    dt:orbits dt:Uranus .
+
+dt:S-2000-J11 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2000 J11" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J10 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J10" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J12 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J12" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 5e-01 .
+
+dt:S-2003-J15 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J15" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J16 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J16" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J18 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J18" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J19 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J19" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J2 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J2" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J23 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J23" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J3 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J3" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J4 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J4" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2003-J5 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J5" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2e+00 .
+
+dt:S-2003-J9 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2003 J9" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 5e-01 .
+
+dt:S-2004-N1 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2004 N1" ;
+    dt:albedo 1e-01 ;
+    dt:orbits dt:Neptune ;
+    dt:radius 9e+00 .
+
+dt:S-2004-S12 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2004 S12" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 2.5e+00 .
+
+dt:S-2004-S13 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2004 S13" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:S-2004-S17 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2004 S17" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 2e+00 .
+
+dt:S-2004-S7 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2004 S7" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:S-2006-S1 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2006 S1" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:S-2006-S3 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2006 S3" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 2.5e+00 .
+
+dt:S-2007-S2 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2007 S2" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:S-2007-S3 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2007 S3" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 2e+00 .
+
+dt:S-2010-J1 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2010 J1" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2010-J2 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2010 J2" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2011-J1 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2011 J1" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:S-2011-J2 a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "S/2011 J2" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Sao a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Sao" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Neptune ;
+    dt:radius 2.2e+01 .
+
+dt:Setebos a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Setebos" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 2.4e+01 .
+
+dt:Siarnaq a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Siarnaq" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 2e+01 .
+
+dt:Sinope a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Sinope" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1.9e+01 .
+
+dt:Skathi a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Skathi" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 4e+00 .
+
+dt:Skoll a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Skoll" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Sponde a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Sponde" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Stephano a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Stephano" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 1.6e+01 .
+
+dt:Styx a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Styx" ;
+    dt:albedo 3.5e-01 ;
+    dt:orbits dt:Pluto ;
+    dt:radius 1e+01 .
+
+dt:Surtur a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Surtur" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Suttungr a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Suttungr" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3.5e+00 .
+
+dt:Sycorax a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Sycorax" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 7.5e+01 .
+
+dt:Tarqeq a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Tarqeq" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3e+00 .
+
+dt:Tarvos a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Tarvos" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 7.5e+00 .
+
+dt:Taygete a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Taygete" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2.5e+00 .
+
+dt:Telesto a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Telesto" ;
+    dt:albedo 1e+00 ;
+    dt:orbits dt:Saturn .
+
+dt:Tethys a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Tethys" ;
+    dt:orbits dt:Saturn .
+
+dt:Thalassa a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Thalassa" ;
+    dt:albedo 9.1e-02 ;
+    dt:orbits dt:Neptune .
+
+dt:Thebe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Thebe" ;
+    dt:orbits dt:Jupiter .
+
+dt:Thelxinoe a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Thelxinoe" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 1e+00 .
+
+dt:Themisto a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Themisto" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 4e+00 .
+
+dt:Thrymr a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Thrymr" ;
+    dt:albedo 6e-02 ;
+    dt:orbits dt:Saturn ;
+    dt:radius 3.5e+00 .
+
+dt:Thyone a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Thyone" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Jupiter ;
+    dt:radius 2e+00 .
+
+dt:Titan a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Titan" ;
+    dt:albedo 2e-01 ;
+    dt:orbits dt:Saturn .
+
+dt:Titania a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Titania" ;
+    dt:orbits dt:Uranus .
+
+dt:Trinculo a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Trinculo" ;
+    dt:albedo 4e-02 ;
+    dt:orbits dt:Uranus ;
+    dt:radius 9e+00 .
+
+dt:Triton a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Triton" ;
+    dt:albedo 7.19e-01 ;
+    dt:orbits dt:Neptune .
+
+dt:Umbriel a dt:NaturalSatellite,
+        owl:NamedIndividual ;
+    rdfs:label "Umbriel" ;
+    dt:orbits dt:Uranus .
+
+dt:Venus a dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Venus" ;
     dt:lengthOfDay 2.802e+03 ;
@@ -36,1671 +1146,68 @@ dt:Venus a dt:HotWorld,
     dt:memberOf dt:SolarSystem ;
     dt:orbitalPeriod 2.247e+02 .
 
-dt:Adrastea a dt:NaturalSatellite,
+dt:Ymir a dt:NaturalSatellite,
         owl:NamedIndividual ;
-    rdfs:label "Adrastea" ;
-    dt:albedo "0.1±0.045" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "8.2±2.0" .
-
-dt:Aegaeon a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Aegaeon" ;
-    dt:albedo "?" ;
-    dt:memberOf dt:SolarSystem ;
+    rdfs:label "Ymir" ;
+    dt:albedo 6e-02 ;
     dt:orbits dt:Saturn ;
-    dt:radius "0.3" .
-
-dt:Aegir a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Aegir" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Aitne a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Aitne" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.5" .
-
-dt:Albiorix a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Albiorix" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "16" .
-
-dt:Amalthea a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Amalthea" ;
-    dt:albedo "0.090±0.005" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "83.45±2.4" .
-
-dt:Ananke a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Ananke" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "14" .
-
-dt:Anthe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Anthe" ;
-    dt:albedo "?" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "0.9" .
-
-dt:Aoede a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Aoede" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.0" .
-
-dt:Arche a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Arche" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.5" .
-
-dt:Ariel a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Ariel" ;
-    dt:albedo "0.39±0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "578.9±0.6" .
-
-dt:AstronomicalObject a owl:Class ;
-    rdfs:label "Astronomical Object"@nb .
-
-dt:Atlas a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Atlas" ;
-    dt:albedo "0.4" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "15.1±1.2" .
-
-dt:Autonoe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Autonoe" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.0" .
-
-dt:Bebhionn a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Bebhionn" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Belinda a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Belinda" ;
-    dt:albedo "0.067±0.024" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "45±8" .
-
-dt:Bergelmir a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Bergelmir" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Bestla a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Bestla" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.5" .
-
-dt:Bianca a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Bianca" ;
-    dt:albedo "0.065±0.010" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "27±2" .
-
-dt:Caliban a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Caliban" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "36" .
-
-dt:Callirrhoe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Callirrhoe" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "4.3" .
-
-dt:Callisto a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Callisto" ;
-    dt:albedo "0.17±0.02" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2410.3±1.5" .
-
-dt:Calypso a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Calypso" ;
-    dt:albedo "1.34±0.10" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "10.7±0.7" .
-
-dt:Carme a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Carme" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "23" .
-
-dt:Carpo a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Carpo" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.5" .
-
-dt:Chaldene a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Chaldene" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.9" .
-
-dt:Charon a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Charon" ;
-    dt:albedo "0.372±0.012" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Pluto ;
-    dt:radius "603.6±1.4" .
-
-dt:Cordelia a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Cordelia" ;
-    dt:albedo "0.07" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "20.1±3." .
-
-dt:Cressida a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Cressida" ;
-    dt:albedo "0.069±0.007" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "41±2" .
-
-dt:Cupid a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Cupid" ;
-    dt:albedo "0.070±0.006" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "9±1" .
-
-dt:Cyllene a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Cyllene" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Daphnis a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Daphnis" ;
-    dt:albedo "?" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.8±0.8" .
-
-dt:Deimos a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Deimos" ;
-    dt:albedo "0.068±0.007" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Mars ;
-    dt:radius "6.2±0.18" .
-
-dt:Desdemona a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Desdemona" ;
-    dt:albedo "0.084±0.019" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "35±4" .
-
-dt:Despina a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Despina" ;
-    dt:albedo "0.090" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "75.±3." .
-
-dt:Dione a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Dione" ;
-    dt:albedo "0.998±0.004" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "561.70±0.45" .
+    dt:radius 9e+00 .
 
 dt:Earth a dt:Planet,
-        dt:TemperateWorld,
         owl:NamedIndividual ;
     rdfs:label "Earth" ;
     dt:lengthOfDay 2.4e+01 ;
     dt:meanTemperature "15"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:moon dt:Moon ;
     dt:orbitalPeriod 3.652e+02 .
 
-dt:Elara a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Elara" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "43" .
-
-dt:Enceladus a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Enceladus" ;
-    dt:albedo "1.375±0.008" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "252.10±0.10" .
-
-dt:Epimetheus a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Epimetheus" ;
-    dt:albedo "0.73±0.03" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "58.1±1.8" .
-
-dt:Erinome a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Erinome" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.6" .
-
-dt:Erriapus a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Erriapus" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "5" .
-
-dt:Euanthe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Euanthe" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.5" .
-
-dt:Eukelade a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Eukelade" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.0" .
-
-dt:Euporie a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Euporie" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Europa a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Europa" ;
-    dt:albedo "0.67±0.03" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1560.8±0.5" .
-
-dt:Eurydome a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Eurydome" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.5" .
-
-dt:Farbauti a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Farbauti" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "2.5" .
-
-dt:Fenrir a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Fenrir" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "2.0" .
-
-dt:Ferdinand a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Ferdinand" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "10" .
-
-dt:Fornjot a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Fornjot" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Francisco a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Francisco" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "11" .
-
-dt:Galatea a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Galatea" ;
-    dt:albedo "0.079" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "88.±4." .
-
-dt:Ganymede a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Ganymede" ;
-    dt:albedo "0.43±0.02" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2631.2±1.7" .
-
-dt:Greip a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Greip" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Halimede a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Halimede" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "31.0" .
-
-dt:Harpalyke a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Harpalyke" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.2" .
-
-dt:Hati a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Hati" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Hegemone a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Hegemone" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.5" .
-
-dt:Helene a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Helene" ;
-    dt:albedo "1.67±0.20" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "17.6±0.4" .
-
-dt:Helike a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Helike" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.0" .
-
-dt:Hermippe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Hermippe" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.0" .
-
-dt:Herse a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Herse" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Himalia a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Himalia" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "85" .
-
-dt:Hydra a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Hydra" ;
-    dt:albedo "0.35" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Pluto ;
-    dt:radius "30.5±4." .
-
-dt:Hyperion a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Hyperion" ;
-    dt:albedo "0.3" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "135.00±4.00" .
-
-dt:Hyrrokkin a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Hyrrokkin" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Iapetus a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Iapetus" ;
-    dt:albedo "0.6" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "735.60±1.50" .
-
-dt:Ijiraq a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Ijiraq" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "6" .
-
-dt:Io a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Io" ;
-    dt:albedo "0.63±0.02" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1821.6±0.5" .
-
-dt:Iocaste a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Iocaste" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.6" .
-
-dt:Isonoe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Isonoe" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.9" .
-
-dt:Janus a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Janus" ;
-    dt:albedo "0.71±0.02" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "89.5±1.5" .
-
-dt:Jarnsaxa a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Jarnsaxa" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Juliet a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Juliet" ;
-    dt:albedo "0.075±0.011" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "53±4" .
-
-dt:Kale a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Kale" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Kallichore a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Kallichore" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Kalyke a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Kalyke" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.6" .
-
-dt:Kari a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Kari" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Kerberos a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Kerberos" ;
-    dt:albedo "0.35" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Pluto ;
-    dt:radius "14.0" .
-
-dt:Kiviuq a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Kiviuq" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "8" .
-
-dt:Kore a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Kore" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Laomedeia a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Laomedeia" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "21.0" .
-
-dt:Larissa a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Larissa" ;
-    dt:albedo "0.091" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "97.±3." .
-
-dt:Leda a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Leda" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "10" .
-
-dt:Loge a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Loge" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Lysithea a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Lysithea" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "18" .
-
-dt:Mab a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Mab" ;
-    dt:albedo "0.103±0.006" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "12±1" .
-
-dt:Margaret a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Margaret" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "10" .
-
-dt:Megaclite a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Megaclite" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.7" .
-
-dt:Methone a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Methone" ;
-    dt:albedo "?" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "1.6±0.6" .
-
-dt:Metis a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Metis" ;
-    dt:albedo "0.061±0.003" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "21.5±2.0" .
-
-dt:Mimas a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Mimas" ;
-    dt:albedo "0.962±0.004" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "198.20±0.25" .
-
-dt:Miranda a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Miranda" ;
-    dt:albedo "0.32±0.03" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "235.8±0.7" .
-
-dt:Mneme a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Mneme" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Moon a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Moon" ;
-    dt:albedo "0.12" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Earth ;
-    dt:radius "1737.5±0.1" .
-
-dt:Mundilfari a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Mundilfari" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.5" .
-
-dt:Naiad a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Naiad" ;
-    dt:albedo "0.072" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "33.±3." .
-
-dt:Narvi a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Narvi" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.5" .
-
-dt:Nereid a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Nereid" ;
-    dt:albedo "0.155" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "170.±25." .
-
-dt:Neso a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Neso" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "30.0" .
-
-dt:Nix a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Nix" ;
-    dt:albedo "0.35" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Pluto ;
-    dt:radius "23.0±2." .
-
-dt:Oberon a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Oberon" ;
-    dt:albedo "0.23±0.03" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "761.4±2.6" .
-
-dt:Ophelia a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Ophelia" ;
-    dt:albedo "0.07" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "21.4±4." .
-
-dt:Orthosie a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Orthosie" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Paaliaq a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Paaliaq" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "11.0" .
-
-dt:Pallene a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Pallene" ;
-    dt:albedo "?" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "2.5±0.6" .
-
-dt:Pan a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Pan" ;
-    dt:albedo "0.5" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "14.1±1.3" .
-
-dt:Pandora a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Pandora" ;
-    dt:albedo "0.5" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "40.7±1.5" .
-
-dt:Pasiphae a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Pasiphae" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "30" .
-
-dt:Pasithee a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Pasithee" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Perdita a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Perdita" ;
-    dt:albedo "0.070±0.006" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "13±1" .
-
-dt:Phobos a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Phobos" ;
-    dt:albedo "0.071±0.012" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Mars ;
-    dt:radius "11.1±0.15" .
-
-dt:Phoebe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Phoebe" ;
-    dt:albedo "0.081±0.002" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "106.50±0.70" .
-
-dt:Polydeuces a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Polydeuces" ;
-    dt:albedo "?" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "1.3±0.4" .
-
-dt:Portia a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Portia" ;
-    dt:albedo "0.069±0.008" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "70±4" .
-
-dt:Praxidike a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Praxidike" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "3.4" .
-
-dt:Prometheus a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Prometheus" ;
-    dt:albedo "0.6" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "43.1±2.7" .
-
-dt:Prospero a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Prospero" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "25" .
-
-dt:Proteus a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Proteus" ;
-    dt:albedo "0.096" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "210.±7." .
-
-dt:Psamathe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Psamathe" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "20.0" .
-
-dt:Puck a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Puck" ;
-    dt:albedo "0.104±0.006" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "81±2" .
-
-dt:Rhea a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Rhea" ;
-    dt:albedo "0.949±0.003" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "764.30±1.10" .
-
-dt:Rosalind a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Rosalind" ;
-    dt:albedo "0.072±0.024" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "36±6" .
-
-dt:S-2000-J11 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2000 J11" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J10 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J10" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J12 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J12" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "0.5" .
-
-dt:S-2003-J15 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J15" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J16 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J16" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J18 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J18" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J19 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J19" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J2 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J2" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J23 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J23" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J3 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J3" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J4 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J4" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2003-J5 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J5" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.0" .
-
-dt:S-2003-J9 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2003 J9" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "0.5" .
-
-dt:S-2004-N1 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2004 N1" ;
-    dt:albedo "0.10" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "9.0" .
-
-dt:S-2004-S12 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2004 S12" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "2.5" .
-
-dt:S-2004-S13 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2004 S13" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:S-2004-S17 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2004 S17" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "2.0" .
-
-dt:S-2004-S7 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2004 S7" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:S-2006-S1 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2006 S1" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:S-2006-S3 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2006 S3" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "2.5" .
-
-dt:S-2007-S2 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2007 S2" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:S-2007-S3 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2007 S3" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "2.0" .
-
-dt:S-2010-J1 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2010 J1" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2010-J2 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2010 J2" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2011-J1 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2011 J1" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:S-2011-J2 a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "S/2011 J2" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Sao a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Sao" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "22.0" .
-
-dt:Setebos a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Setebos" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "24" .
-
-dt:Siarnaq a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Siarnaq" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "20" .
-
-dt:Sinope a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Sinope" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "19" .
-
-dt:Skathi a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Skathi" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "4" .
-
-dt:Skoll a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Skoll" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Sponde a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Sponde" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Stephano a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Stephano" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "16" .
-
-dt:Styx a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Styx" ;
-    dt:albedo "0.35" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Pluto ;
-    dt:radius "10.0" .
-
-dt:Surtur a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Surtur" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Suttungr a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Suttungr" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.5" .
-
-dt:Sycorax a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Sycorax" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "75" .
-
-dt:Tarqeq a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Tarqeq" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.0" .
-
-dt:Tarvos a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Tarvos" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "7.5" .
-
-dt:Taygete a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Taygete" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.5" .
-
-dt:Telesto a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Telesto" ;
-    dt:albedo "1.0" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "12.4±0.4" .
-
-dt:Tethys a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Tethys" ;
-    dt:albedo "1.229±0.005" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "533.00±0.70" .
-
-dt:Thalassa a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Thalassa" ;
-    dt:albedo "0.091" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "41.±3." .
-
-dt:Thebe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Thebe" ;
-    dt:albedo "0.047±0.003" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "49.3±2.0" .
-
-dt:Thelxinoe a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Thelxinoe" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "1.0" .
-
-dt:Themisto a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Themisto" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "4.0" .
-
-dt:Thrymr a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Thrymr" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "3.5" .
-
-dt:Thyone a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Thyone" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Jupiter ;
-    dt:radius "2.0" .
-
-dt:Titan a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Titan" ;
-    dt:albedo "0.2" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "2574.73±0.09" .
-
-dt:Titania a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Titania" ;
-    dt:albedo "0.27±0.03" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "788.9±1.8" .
-
-dt:Trinculo a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Trinculo" ;
-    dt:albedo "0.04" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "9" .
-
-dt:Triton a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Triton" ;
-    dt:albedo "0.719" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Neptune ;
-    dt:radius "1353.4±0.9" .
-
-dt:Umbriel a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Umbriel" ;
-    dt:albedo "0.21±0.02" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Uranus ;
-    dt:radius "584.7±2.8" .
-
-dt:Ymir a dt:NaturalSatellite,
-        owl:NamedIndividual ;
-    rdfs:label "Ymir" ;
-    dt:albedo "0.06" ;
-    dt:memberOf dt:SolarSystem ;
-    dt:orbits dt:Saturn ;
-    dt:radius "9" .
-
 dt:Mars a dt:Planet,
-        dt:TemperateWorld,
         owl:NamedIndividual ;
     rdfs:label "Mars" ;
     dt:lengthOfDay 2.47e+01 ;
     dt:meanTemperature "-65"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:moon dt:Deimos,
-        dt:Phobos ;
     dt:orbitalPeriod 6.87e+02 .
 
-dt:AstronomicalBody a owl:Class ;
-    rdfs:label "Astronomical Body"@en .
-
-dt:Pluto a dt:FrozenWorld,
-        dt:Planet,
+dt:Pluto a dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Pluto" ;
     dt:lengthOfDay 1.533e+02 ;
     dt:meanTemperature "-225"^^xsd:long ;
-    dt:memberOf dt:SolarSystem ;
-    dt:moon dt:Charon,
-        dt:Hydra,
-        dt:Kerberos,
-        dt:Nix,
-        dt:Styx ;
     dt:orbitalPeriod 9.056e+04 .
 
-dt:Planet a owl:Class ;
-    rdfs:subClassOf dt:AstronomicalBody .
+dt:SolarSystem a dt:PlanetarySystem,
+        owl:NamedIndividual .
 
-dt:Neptune a dt:FrozenWorld,
-        dt:Planet,
+dt:Neptune a dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Neptune" ;
     dt:lengthOfDay 1.61e+01 ;
     dt:meanTemperature "-200"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:moon dt:Despina,
-        dt:Galatea,
-        dt:Halimede,
-        dt:Laomedeia,
-        dt:Larissa,
-        dt:Naiad,
-        dt:Nereid,
-        dt:Neso,
-        dt:Proteus,
-        dt:Psamathe,
-        dt:S-2004-N1,
-        dt:Sao,
-        dt:Thalassa,
-        dt:Triton ;
     dt:orbitalPeriod 5.98e+04 .
 
-dt:Uranus a dt:FrozenWorld,
-        dt:Planet,
+dt:Uranus a dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Uranus" ;
     dt:lengthOfDay 1.72e+01 ;
     dt:meanTemperature "-195"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:moon dt:Ariel,
-        dt:Belinda,
-        dt:Bianca,
-        dt:Caliban,
-        dt:Cordelia,
-        dt:Cressida,
-        dt:Cupid,
-        dt:Desdemona,
-        dt:Ferdinand,
-        dt:Francisco,
-        dt:Juliet,
-        dt:Mab,
-        dt:Margaret,
-        dt:Miranda,
-        dt:Oberon,
-        dt:Ophelia,
-        dt:Perdita,
-        dt:Portia,
-        dt:Prospero,
-        dt:Puck,
-        dt:Rosalind,
-        dt:Setebos,
-        dt:Stephano,
-        dt:Sycorax,
-        dt:Titania,
-        dt:Trinculo,
-        dt:Umbriel ;
     dt:orbitalPeriod 3.0589e+04 .
 
-dt:Saturn a dt:FrozenWorld,
-        dt:Planet,
+dt:Saturn a dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Saturn" ;
     dt:lengthOfDay 1.07e+01 ;
     dt:meanTemperature "-140"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:moon dt:Aegaeon,
-        dt:Aegir,
-        dt:Albiorix,
-        dt:Anthe,
-        dt:Atlas,
-        dt:Bebhionn,
-        dt:Bergelmir,
-        dt:Bestla,
-        dt:Calypso,
-        dt:Daphnis,
-        dt:Dione,
-        dt:Enceladus,
-        dt:Epimetheus,
-        dt:Erriapus,
-        dt:Farbauti,
-        dt:Fenrir,
-        dt:Fornjot,
-        dt:Greip,
-        dt:Hati,
-        dt:Helene,
-        dt:Hyperion,
-        dt:Hyrrokkin,
-        dt:Iapetus,
-        dt:Ijiraq,
-        dt:Janus,
-        dt:Jarnsaxa,
-        dt:Kari,
-        dt:Kiviuq,
-        dt:Loge,
-        dt:Methone,
-        dt:Mimas,
-        dt:Mundilfari,
-        dt:Narvi,
-        dt:Paaliaq,
-        dt:Pallene,
-        dt:Pan,
-        dt:Pandora,
-        dt:Phoebe,
-        dt:Polydeuces,
-        dt:Prometheus,
-        dt:Rhea,
-        dt:S-2004-S12,
-        dt:S-2004-S13,
-        dt:S-2004-S17,
-        dt:S-2004-S7,
-        dt:S-2006-S1,
-        dt:S-2006-S3,
-        dt:S-2007-S2,
-        dt:S-2007-S3,
-        dt:Siarnaq,
-        dt:Skathi,
-        dt:Skoll,
-        dt:Surtur,
-        dt:Suttungr,
-        dt:Tarqeq,
-        dt:Tarvos,
-        dt:Telesto,
-        dt:Tethys,
-        dt:Thrymr,
-        dt:Titan,
-        dt:Ymir ;
     dt:orbitalPeriod 1.0747e+04 .
 
-dt:Jupiter a dt:FrozenWorld,
-        dt:Planet,
+dt:Jupiter a dt:Planet,
         owl:NamedIndividual ;
     rdfs:label "Jupiter" ;
     dt:lengthOfDay 9.9e+00 ;
     dt:meanTemperature "-110"^^xsd:long ;
     dt:memberOf dt:SolarSystem ;
-    dt:moon dt:Adrastea,
-        dt:Aitne,
-        dt:Amalthea,
-        dt:Ananke,
-        dt:Aoede,
-        dt:Arche,
-        dt:Autonoe,
-        dt:Callirrhoe,
-        dt:Callisto,
-        dt:Carme,
-        dt:Carpo,
-        dt:Chaldene,
-        dt:Cyllene,
-        dt:Elara,
-        dt:Erinome,
-        dt:Euanthe,
-        dt:Eukelade,
-        dt:Euporie,
-        dt:Europa,
-        dt:Eurydome,
-        dt:Ganymede,
-        dt:Harpalyke,
-        dt:Hegemone,
-        dt:Helike,
-        dt:Hermippe,
-        dt:Herse,
-        dt:Himalia,
-        dt:Io,
-        dt:Iocaste,
-        dt:Isonoe,
-        dt:Kale,
-        dt:Kallichore,
-        dt:Kalyke,
-        dt:Kore,
-        dt:Leda,
-        dt:Lysithea,
-        dt:Megaclite,
-        dt:Metis,
-        dt:Mneme,
-        dt:Orthosie,
-        dt:Pasiphae,
-        dt:Pasithee,
-        dt:Praxidike,
-        dt:S-2000-J11,
-        dt:S-2003-J10,
-        dt:S-2003-J12,
-        dt:S-2003-J15,
-        dt:S-2003-J16,
-        dt:S-2003-J18,
-        dt:S-2003-J19,
-        dt:S-2003-J2,
-        dt:S-2003-J23,
-        dt:S-2003-J3,
-        dt:S-2003-J4,
-        dt:S-2003-J5,
-        dt:S-2003-J9,
-        dt:S-2010-J1,
-        dt:S-2010-J2,
-        dt:S-2011-J1,
-        dt:S-2011-J2,
-        dt:Sinope,
-        dt:Sponde,
-        dt:Taygete,
-        dt:Thebe,
-        dt:Thelxinoe,
-        dt:Themisto,
-        dt:Thyone ;
     dt:orbitalPeriod 4.331e+03 .
-
-dt:NaturalSatellite a owl:Class ;
-    rdfs:subClassOf dt:AstronomicalBody .
 
