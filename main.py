@@ -4,20 +4,22 @@ from maplib import IRI
 from utils import write_output
 from utils import print_count
 
-
 import parse_data as data
+import time
+
 
 
 # Serialise data frame to RDF using OTTR template for planets
-with open("tpl/tpl.ttl", "r") as file:
+with open("tpl/tpl.stottr", "r") as file:
     tpl = file.read()
 
 m = Model()
 m.add_template(tpl)
 
 # Kick-start building templates with expand_default
-# tmp_tpl = m.expand_default(data.planets(), "planet_uri")
-# print(tmp_tpl)
+#tmp_tpl = m.map_default(data.planets(), "planet_uri")
+#print(tmp_tpl)
+
 
 
 m.map(data.ns_tpl + "Planet", data.planets())
@@ -26,27 +28,60 @@ m.map(data.ns_tpl + "Satellite", data.satellites())
 
 print_count("mapping", m)
 
-###########
-## Rules ##
-########### 
+####################################### MERGE IN ONTOLOGY
+
+#m.read("ttl/ast.ttl")
+print_count("merge with ontology", m)
+
+####################################### INSERT
+
+with open("queries/insert_planets_to_solar_system.rq", "r") as file:
+    insert_planets_to_solar_system = file.read()
+
+m.insert(insert_planets_to_solar_system)
+
+with open("queries/insert_individual.rq", "r") as file:
+    insert_individual = file.read()
+
+m.update(insert_individual)
+print_count("insert queries", m)
+
+####################################### RULES
+
 
 with open("ttl/rule.dlog", "r") as file:
     rules = file.read()
 
-m.infer(rules)
-
+#m.infer(rules)
 print_count("inference", m)
 
-####################################### MERGE IN ONTOLOGY
-
-m.read("ttl/ast.ttl")
 
 ####################################### VALIDATION
 
-m.read("ttl/sh.ttl", graph=data.ns_sh)
-report = m.validate(shape_graph=data.ns_sh)
+#m.read("ttl/sh.ttl", graph=data.ns_sh)
+#report = m.validate(shape_graph=data.ns_sh, include_shape_graph=False)
 
-write_output(report.graph(), "ttl/report.ttl")
+#write_output(report.graph(), "ttl/report.ttl")
 
+#print_count("validation report", report.graph())
+with open("queries/focus_node_violations.rq", "r") as file:
+    focus_node_violations = file.read()
+
+#print(report.graph().query(focus_node_violations)["focusNode"])
+
+####################################### EXPLORE
+
+#p = explore(m, port="4321")
+#time.sleep(222)
+
+
+p_iri = IRI("http://data.treehouse.example/meanTemperature")
+p = m.get_predicate(p_iri)
+for x in p:
+    print(x.mappings)
+
+
+####################################### WRITE TO FILE
 
 write_output(m, "ttl/out.ttl")
+

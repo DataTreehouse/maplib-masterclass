@@ -1,12 +1,12 @@
 import polars as pl
 pl.Config.set_fmt_str_lengths(150)
 
-
+# Namespaces
 ns = "http://data.treehouse.example/"
 ns_tpl = "http://data.treehouse.example/tpl/"
 ns_sh = "http://data.treehouse.example/sh/"
 
-# DATA FROM: https://github.com/devstronomy/nasa-data-scraper/tree/master
+# PLANETS AND SATELLITES: https://github.com/devstronomy/nasa-data-scraper/tree/master
 # STARS: https://www.kaggle.com/datasets/waqi786/stars-dataset/data
 
 def planets():
@@ -22,7 +22,7 @@ def planets():
     # Chose columns to play with
     df_planets = df_planets.select(
         ["planet", 
-        "planet_uri", 
+        "planet_uri", # the new column we just made :-)
         "mean_temperature",
         "length_of_day",
         "orbital_period"
@@ -35,17 +35,31 @@ def satellites():
     
     df_satellites = pl.read_csv("data/satellites.csv")
     df_satellites = df_satellites.with_columns(
-        (pl.lit(ns) + pl.col("planet")).alias("planet_uri")
+        (ns + pl.col("planet")).alias("planet_uri")
     )
     df_satellites = df_satellites.with_columns(
-        (pl.lit(ns) + pl.col("name")
+        (ns + pl.col("name")
         .str.replace_all("/", "-"))
         .str.replace_all(" ", "-")
         .alias("satellite_uri")
     )
     df_satellites = df_satellites.select(
         ["name", "planet_uri", "satellite_uri", "albedo", "radius"]
+    )
+
+    df_satellites = (
+    df_satellites
+    .with_columns(
+        pl.col("albedo")
+        .cast(pl.Float64, strict=False)     
+        .alias("albedo")
         )
+    .with_columns(
+        pl.col("radius")
+        .cast(pl.Float64, strict=False)     
+        .alias("radius")
+        )
+    )
     
     return df_satellites
 

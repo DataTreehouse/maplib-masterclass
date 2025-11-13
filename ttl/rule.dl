@@ -1,4 +1,0 @@
-PREFIX : <http://data.treehouse.example/>
-
-[?x, :memberOf, ?z] :- [?x, :orbits, ?y], [?y, :memberOf, ?z] .
-[?x, :moon, ?y] :- [?y, :orbits, ?x] .
