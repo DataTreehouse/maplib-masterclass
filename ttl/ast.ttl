@@ -19,7 +19,7 @@
 ###  http://data.treehouse.example/memberOf
 :memberOf rdf:type owl:ObjectProperty ;
           rdfs:domain :AstronomicalBody ;
-          rdfs:range :PlanetraySystem ;
+          rdfs:range :PlanetarySystem ;
           rdfs:comment "An astronomical body can be member of a planetary system."@en ;
           rdfs:label "member of"@en .
 
@@ -113,8 +113,8 @@
                   rdfs:label "Planetary categories"@en .
 
 
-###  http://data.treehouse.example/PlanetraySystem
-:PlanetraySystem rdf:type owl:Class ;
+###  http://data.treehouse.example/PlanetarySystem
+:PlanetarySystem rdf:type owl:Class ;
                  rdfs:subClassOf :AstronomicalObject ;
                  rdfs:label "Planetary system"@en .
 

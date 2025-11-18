@@ -1,0 +1,36 @@
+\frametitle{Connected Data London sandbox}
+
+\begin{minipage}{0.45\textwidth}
+\textbf{Sanbox environment:} demo.data-treehou.se
+
+\vspace{10pt}
+
+\textbf{\faGithub{} DataTreehouse/maplib-masterclass}
+
+\vspace{10pt}
+
+\begin{code}
+\begin{verbatim}
+pip install maplib
+\end{verbatim}
+\end{code}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{tikzpicture}
+\draw[rounded corners, fill=dtgreen!30, draw=none] (0,0) rectangle (3,4);
+\node[align=center] (1) at (1.5,3.4) {\textbf{MAPLIB}\\ \small{FREE \& OPEN-SOURCE}};
+\node[align=left] (2) at (1.25, 2) {I/O\\RDF Model\\SPARQL\\OTTR Mapping};
+
+
+\draw[rounded corners, fill=dtgreen!30, draw=none] (3.5,0) rectangle (6.5,4);
+\node[align=center] (1) at (5,3.4) {\textbf{MAPLIB+}\\ \small{€990/month}};
+\node[align=left] (2) at (5.1,1.55) {I/O\\RDF Model\\SPARQL\\OTTR Mapping\\Datalog\\SHACL\\Treehouse explorer};
+\end{tikzpicture}
+
+\vspace{5pt}
+
+Early bird (in 2025): €445/month for life.\\
+30 day free trial.
+Academic license always free.
+\end{minipage}
+

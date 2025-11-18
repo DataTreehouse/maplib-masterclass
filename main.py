@@ -1,6 +1,5 @@
 from maplib import Model
 from maplib import explore
-from maplib import IRI
 from utils import write_output
 from utils import print_count
 
@@ -20,31 +19,33 @@ m.add_template(tpl)
 #tmp_tpl = m.map_default(data.planets(), "planet_uri")
 #print(tmp_tpl)
 
+#m.map(data.ns_tpl + "Planet", data.planets())
+#m.map(data.ns_tpl + "Satellite", data.satellites())
 
+#print_count("mapping", m)
 
-m.map(data.ns_tpl + "Planet", data.planets())
-m.map(data.ns_tpl + "Satellite", data.satellites())
-
-
-print_count("mapping", m)
 
 ####################################### MERGE IN ONTOLOGY
 
 #m.read("ttl/ast.ttl")
-print_count("merge with ontology", m)
+#print_count("merge with ontology", m)
+
+# Note to self: validate
 
 ####################################### INSERT
 
 with open("queries/insert_planets_to_solar_system.rq", "r") as file:
     insert_planets_to_solar_system = file.read()
 
-m.insert(insert_planets_to_solar_system)
+#m.insert(insert_planets_to_solar_system)
 
 with open("queries/insert_individual.rq", "r") as file:
     insert_individual = file.read()
 
-m.update(insert_individual)
-print_count("insert queries", m)
+#m.update(insert_individual)
+
+#print_count("insert queries", m)
+
 
 ####################################### RULES
 
@@ -53,7 +54,7 @@ with open("ttl/rule.dlog", "r") as file:
     rules = file.read()
 
 #m.infer(rules)
-print_count("inference", m)
+#print_count("inference", m)
 
 
 ####################################### VALIDATION
@@ -64,6 +65,10 @@ print_count("inference", m)
 #write_output(report.graph(), "ttl/report.ttl")
 
 #print_count("validation report", report.graph())
+
+
+#print(report.performance)
+
 with open("queries/focus_node_violations.rq", "r") as file:
     focus_node_violations = file.read()
 
@@ -71,15 +76,8 @@ with open("queries/focus_node_violations.rq", "r") as file:
 
 ####################################### EXPLORE
 
-#p = explore(m, port="4321")
+#explore(m)
 #time.sleep(222)
-
-
-p_iri = IRI("http://data.treehouse.example/meanTemperature")
-p = m.get_predicate(p_iri)
-for x in p:
-    print(x.mappings)
-
 
 ####################################### WRITE TO FILE
 

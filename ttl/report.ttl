@@ -1,18 +1,6 @@
-@prefix dt: <http://data.treehouse.example/> .
-@prefix ns1: <https://github.com/DataTreehouse/maplib#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix shapes: <http://data.treehouse.example/sh/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:maplib:report> a sh:ValidationReport ;
-    sh:conforms false ;
-    sh:result <urn:maplib:tr02df03bc-4cc3-43ca-a397-fb962c2a997d_0> .
-
-<urn:maplib:tr02df03bc-4cc3-43ca-a397-fb962c2a997d_0> a sh:ValidationResult ;
-    sh:focusNode dt:Pluto ;
-    sh:resultPath dt:memberOf ;
-    sh:resultSeverity sh:Violation ;
-    sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-    sh:sourceShape shapes:AstronomicalBody-memberOf ;
-    ns1:resultConforms false .
+    sh:conforms true .
 
