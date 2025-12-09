@@ -18,13 +18,6 @@ Welcome to the _maplib masterclass_, in here you'll find all you need to get up 
 * `parse_data.py` contains static variables for namespaces and functions for data engineering with data frames for instance data.
 * `main.py` where the magic happens ✨ --- maplib knowledge graph construction, including querying, validation and reasoning.
 
-### Maplib sandbox environment
-Try out maplib yourself with out time limited (Dec 1st 2025) sandbox environment:
-
-Get the full experience at: [https://demo.data-treehou.se/](https://demo.data-treehou.se/)
-
-**code: CDL-MAPLIB-25**
-
 ### Resources
 * [Tutorial documentation](https://datatreehouse.github.io/documentation/#/page/maplib%20docs)
 * [maplib API documentation](https://datatreehouse.github.io/maplib/maplib.html)
