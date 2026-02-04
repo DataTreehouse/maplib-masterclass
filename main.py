@@ -79,5 +79,5 @@ with open("queries/focus_node_violations.rq", "r") as file:
 
 ####################################### WRITE TO FILE
 
-m.write("out.ttl", format="turtle")
+m.write("ttl/out.ttl", format="turtle")
 
