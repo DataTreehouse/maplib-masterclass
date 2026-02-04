@@ -1,6 +1,5 @@
 from maplib import Model
 from maplib import explore
-from utils import write_output
 from utils import print_count
 
 import parse_data as data
@@ -19,8 +18,8 @@ m.add_template(tpl)
 #tmp_tpl = m.map_default(data.planets(), "planet_uri")
 #print(tmp_tpl)
 
-#m.map(data.ns_tpl + "Planet", data.planets())
-#m.map(data.ns_tpl + "Satellite", data.satellites())
+m.map(data.ns_tpl + "Planet", data.planets())
+m.map(data.ns_tpl + "Satellite", data.satellites())
 
 #print_count("mapping", m)
 
@@ -66,7 +65,6 @@ with open("ttl/rule.dlog", "r") as file:
 
 #print_count("validation report", report.graph())
 
-
 #print(report.performance)
 
 with open("queries/focus_node_violations.rq", "r") as file:
@@ -81,5 +79,5 @@ with open("queries/focus_node_violations.rq", "r") as file:
 
 ####################################### WRITE TO FILE
 
-write_output(m, "ttl/out.ttl")
+m.write("out.ttl", format="turtle")
 
