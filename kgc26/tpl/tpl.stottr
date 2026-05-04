@@ -1,0 +1,93 @@
+@prefix : <http://data.treehouse.example/> .
+@prefix tpl: <http://data.treehouse.example/tpl/> .
+@prefix ottr: <http://ns.ottr.xyz/0.4/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# The mapping magic that translates input data (DataFrames) to knowledge graph (RDF) <3
+
+tpl:Author[
+    xsd:string ?name,
+    ! ottr:IRI ?author_iri,
+    xsd:long ?birth_year,
+    xsd:long ?death_year,
+    ottr:IRI ?nationality,
+    xsd:string ?era
+ ] :: {
+    ottr:Triple(?author_iri, rdf:type, :Author),
+    ottr:Triple(?author_iri, rdfs:label, ?name),
+    ottr:Triple(?author_iri, :birthYear, ?birth_year),
+    ottr:Triple(?author_iri, :deathYear, ?death_year),
+    ottr:Triple(?author_iri, :nationality, ?nationality),
+    ottr:Triple(?nationality, rdf:type, :Country),
+    ottr:Triple(?author_iri, :era, ?era)
+} .
+
+
+tpl:Series[
+    xsd:string ?series_name,
+    ! ottr:IRI ?series_iri,
+    xsd:long ?started_year,
+    xsd:string ?status,
+    xsd:string ?description
+ ] :: {
+    ottr:Triple(?series_iri, rdf:type, :Series),
+    ottr:Triple(?series_iri, rdfs:label, ?series_name),
+    ottr:Triple(?series_iri, :startedYear, ?started_year),
+    ottr:Triple(?series_iri, :seriesStatus, ?status),
+    ottr:Triple(?series_iri, rdfs:comment, ?description)
+} .
+
+
+tpl:Book[
+    xsd:string ?title,
+    ! ottr:IRI ?book_iri,
+    ottr:IRI ?author_iri,
+    ottr:IRI ?series_iri,
+    xsd:long ?position,
+    xsd:long ?publication_year,
+    xsd:string ?genre,
+    xsd:string ?isbn
+ ] :: {
+    ottr:Triple(?book_iri, rdf:type, :Book),
+    ottr:Triple(?book_iri, rdfs:label, ?title),
+    ottr:Triple(?author_iri, :wrote, ?book_iri),
+    ottr:Triple(?book_iri, :partOf, ?series_iri),
+    ottr:Triple(?book_iri, :positionInSeries, ?position),
+    ottr:Triple(?book_iri, :publicationYear, ?publication_year),
+    ottr:Triple(?book_iri, :genre, ?genre),
+    ottr:Triple(?book_iri, :isbn, ?isbn)
+} .
+
+
+# A "skinny" template that just emits the :nextInSeries edge.
+# Fed by a Polars self-join in data_engineering.next_in_series().
+tpl:NextInSeriesLink[
+    ! ottr:IRI ?book_iri,
+    ottr:IRI ?next_book_iri
+ ] :: {
+    ottr:Triple(?book_iri, :nextInSeries, ?next_book_iri)
+} .
+
+
+tpl:Adaptation[
+    xsd:string ?adaptation_title,
+    ! ottr:IRI ?adaptation_iri,
+    ottr:IRI ?book_iri,
+    xsd:string ?adaptation_type,
+    xsd:long ?release_year,
+    xsd:string ?director,
+    xsd:long ?runtime_minutes,
+    xsd:double ?imdb_rating
+ ] :: {
+    ottr:Triple(?adaptation_iri, rdf:type, :Adaptation),
+    ottr:Triple(?adaptation_iri, rdfs:label, ?adaptation_title),
+    ottr:Triple(?adaptation_iri, :basedOn, ?book_iri),
+    ottr:Triple(?adaptation_iri, :adaptationType, ?adaptation_type),
+    ottr:Triple(?adaptation_iri, :releaseYear, ?release_year),
+    ottr:Triple(?adaptation_iri, :director, ?director),
+    ottr:Triple(?adaptation_iri, :runtimeMinutes, ?runtime_minutes),
+    ottr:Triple(?adaptation_iri, :imdbRating, ?imdb_rating)
+} .

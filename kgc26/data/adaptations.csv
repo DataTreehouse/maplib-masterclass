@@ -1,0 +1,11 @@
+adaptation_id,adaptation_title,source_book_ref,adaptation_type,release_year,director,runtime_minutes,imdb_rating
+fellowship_film,The Lord of the Rings: The Fellowship of the Ring,fellowship,film,2001,Peter Jackson,178,8.9
+two_towers_film,The Lord of the Rings: The Two Towers,two_towers,film,2002,Peter Jackson,179,8.8
+return_king_film,The Lord of the Rings: The Return of the King,return_king,film,2003,Peter Jackson,201,9.0
+hobbit_film,The Hobbit: An Unexpected Journey,hobbit,film,2012,Peter Jackson,169,7.8
+dune_lynch,Dune,dune,film,1984,David Lynch,137,6.3
+dune_villeneuve,Dune: Part One,dune,film,2021,Denis Villeneuve,155,8.0
+foundation_tv,Foundation,foundation,tv_series,2021,David S. Goyer,60,7.4
+hhgtg_film,The Hitchhiker's Guide to the Galaxy,hhgtg,film,2005,Garth Jennings,109,6.7
+hhgtg_radio,The Hitchhiker's Guide to the Galaxy,hhgtg,radio,1978,Douglas Adams,30,8.5
+earthsea_ghibli,Tales from Earthsea,tombs_of_atuan,animation,2006,Goro Miyazaki,115,6.3

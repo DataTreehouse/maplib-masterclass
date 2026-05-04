@@ -1,0 +1,96 @@
+@prefix : <http://data.treehouse.example/> .
+@prefix rule: <http://data.treehouse.example/sh/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+###  Author
+###  Must have a name (label), birth year, and at least one book.
+
+rule:Author a sh:NodeShape ;
+    sh:targetClass :Author ;
+    sh:property rule:Author-label ;
+    sh:property rule:Author-birthYear ;
+    sh:property rule:Author-wrote .
+
+rule:Author-label a sh:PropertyShape ;
+    sh:path rdfs:label ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string .
+
+rule:Author-birthYear a sh:PropertyShape ;
+    sh:path :birthYear ;
+    sh:minCount 1 ;
+    sh:datatype xsd:long .
+
+rule:Author-wrote a sh:PropertyShape ;
+    sh:path :wrote ;
+    sh:minCount 1 ;
+    sh:class :Book .
+
+
+###  Book
+###  Must have a title, an ISBN, a publication year, and a series.
+
+rule:Book a sh:NodeShape ;
+    sh:targetClass :Book ;
+    sh:property rule:Book-label ;
+    sh:property rule:Book-isbn ;
+    sh:property rule:Book-publicationYear ;
+    sh:property rule:Book-partOf .
+
+rule:Book-label a sh:PropertyShape ;
+    sh:path rdfs:label ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string .
+
+rule:Book-isbn a sh:PropertyShape ;
+    sh:path :isbn ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string ;
+    sh:pattern "^[0-9]{13}$" .
+
+rule:Book-publicationYear a sh:PropertyShape ;
+    sh:path :publicationYear ;
+    sh:minCount 1 ;
+    sh:datatype xsd:long .
+
+rule:Book-partOf a sh:PropertyShape ;
+    sh:path :partOf ;
+    sh:minCount 1 ;
+    sh:class :Series .
+
+
+###  Series
+###  Must have a label.
+
+rule:Series a sh:NodeShape ;
+    sh:targetClass :Series ;
+    sh:property rule:Series-label .
+
+rule:Series-label a sh:PropertyShape ;
+    sh:path rdfs:label ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string .
+
+
+###  Adaptation
+###  Must be based on a book and have a release year.
+
+rule:Adaptation a sh:NodeShape ;
+    sh:targetClass :Adaptation ;
+    sh:property rule:Adaptation-basedOn ;
+    sh:property rule:Adaptation-releaseYear .
+
+rule:Adaptation-basedOn a sh:PropertyShape ;
+    sh:path :basedOn ;
+    sh:minCount 1 ;
+    sh:class :Book .
+
+rule:Adaptation-releaseYear a sh:PropertyShape ;
+    sh:path :releaseYear ;
+    sh:minCount 1 ;
+    sh:datatype xsd:long .

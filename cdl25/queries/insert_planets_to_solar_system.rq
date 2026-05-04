@@ -14,6 +14,6 @@ WHERE {
     rdfs:label ?label .
 
     FILTER(STR(?label) IN 
-      ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+      ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto")
     ) 
 }

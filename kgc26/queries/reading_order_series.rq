@@ -1,0 +1,14 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Returns reading order of series
+SELECT ?series_name ?reading_order ?title ?stored_position
+WHERE {
+    ?book a :Book ;
+          rdfs:label ?title ;
+          :readingOrder ?reading_order ;
+          :positionInSeries ?stored_position ;
+          :partOf ?series .
+    ?series rdfs:label ?series_name .
+}
+ORDER BY ?series_name ?reading_order

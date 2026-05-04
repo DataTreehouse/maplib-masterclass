@@ -1,0 +1,111 @@
+@prefix : <http://data.treehouse.example/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    SKOS Concept Schemes
+#    Controlled vocabularies for the creative-works domain, using
+#    SKOS (Simple Knowledge Organisation System, W3C Recommendation).
+#    https://www.w3.org/TR/skos-reference/
+#
+#    SKOS lets us define terms, their labels, definitions and
+#    hierarchical relationships in a standardised, reusable way.
+#    Any system that understands SKOS can consume these vocabularies.
+#################################################################
+
+
+###  Genres
+###  A small genre tree for fantasy / sci-fi books.
+
+:GenreScheme rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Book Genres"@en ;
+    dct:description "Controlled vocabulary for book genres in the creative-works catalog."@en .
+
+:Fantasy rdf:type skos:Concept ;
+    skos:prefLabel "fantasy"@en ;
+    skos:definition "Fiction featuring magical or supernatural elements, often in invented worlds."@en ;
+    skos:inScheme :GenreScheme .
+
+:ComicFantasy rdf:type skos:Concept ;
+    skos:prefLabel "comic_fantasy"@en ;
+    skos:altLabel "humorous fantasy"@en ;
+    skos:definition "Fantasy that uses humour and satire as a primary mode."@en ;
+    skos:broader :Fantasy ;
+    skos:inScheme :GenreScheme .
+
+:ScienceFiction rdf:type skos:Concept ;
+    skos:prefLabel "scifi"@en ;
+    skos:altLabel "science fiction"@en ;
+    skos:definition "Speculative fiction grounded in science, technology, and their imagined consequences."@en ;
+    skos:inScheme :GenreScheme .
+
+:ComicScifi rdf:type skos:Concept ;
+    skos:prefLabel "comic_scifi"@en ;
+    skos:altLabel "humorous science fiction"@en ;
+    skos:definition "Science fiction with a comedic or absurdist tone."@en ;
+    skos:broader :ScienceFiction ;
+    skos:inScheme :GenreScheme .
+
+
+###  Author Eras
+###  A loose periodisation of fantasy / sci-fi literary history.
+
+:EraScheme rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Literary Eras"@en ;
+    dct:description "Controlled vocabulary for literary eras of speculative fiction."@en .
+
+:GoldenAge rdf:type skos:Concept ;
+    skos:prefLabel "golden_age"@en ;
+    skos:altLabel "Golden Age of Science Fiction"@en ;
+    skos:definition "Roughly 1938–1960; characterised by Astounding-era hard SF and pulp fantasy."@en ;
+    skos:inScheme :EraScheme .
+
+:NewWave rdf:type skos:Concept ;
+    skos:prefLabel "new_wave"@en ;
+    skos:definition "1960s–1970s; literary experimentation, soft sciences, and social themes."@en ;
+    skos:inScheme :EraScheme ;
+    skos:related :GoldenAge .
+
+:Modernist rdf:type skos:Concept ;
+    skos:prefLabel "modernist"@en ;
+    skos:definition "Pre-Golden-Age authors whose work shaped 20th-century fantasy."@en ;
+    skos:inScheme :EraScheme .
+
+:ModernEra rdf:type skos:Concept ;
+    skos:prefLabel "modern"@en ;
+    skos:definition "1980-onwards; from cyberpunk and second-world fantasy to contemporary speculative fiction."@en ;
+    skos:inScheme :EraScheme ;
+    skos:related :NewWave .
+
+
+###  Adaptation Types
+
+:AdaptationTypeScheme rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Adaptation Types"@en ;
+    dct:description "Controlled vocabulary for adaptation media."@en .
+
+:FilmAdaptation rdf:type skos:Concept ;
+    skos:prefLabel "film"@en ;
+    skos:definition "A theatrically-released motion picture."@en ;
+    skos:inScheme :AdaptationTypeScheme .
+
+:TVSeriesAdaptation rdf:type skos:Concept ;
+    skos:prefLabel "tv_series"@en ;
+    skos:altLabel "television series"@en ;
+    skos:definition "An episodic television series."@en ;
+    skos:inScheme :AdaptationTypeScheme .
+
+:RadioAdaptation rdf:type skos:Concept ;
+    skos:prefLabel "radio"@en ;
+    skos:definition "A radio play or radio series."@en ;
+    skos:inScheme :AdaptationTypeScheme .
+
+:AnimationAdaptation rdf:type skos:Concept ;
+    skos:prefLabel "animation"@en ;
+    skos:altLabel "animated film"@en ;
+    skos:definition "An animated motion picture."@en ;
+    skos:broader :FilmAdaptation ;
+    skos:inScheme :AdaptationTypeScheme .

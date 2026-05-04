@@ -1,0 +1,17 @@
+PREFIX : <http://data.treehouse.example/>
+
+CONSTRUCT { ?b :readingOrder ?n }
+WHERE {
+    {
+        # Base case: a book with no predecessor in the chain has reading order 1.
+        ?b a :Book .
+        FILTER NOT EXISTS { ?prev :nextInSeries ?b }
+        BIND(1 AS ?n)
+    } UNION {
+        # Recursive case: if my predecessor has reading order N, I have N+1.
+        ?prev :nextInSeries ?b ; 
+            :readingOrder ?prev_n .
+        
+        BIND(?prev_n + 1 AS ?n)
+    }
+}

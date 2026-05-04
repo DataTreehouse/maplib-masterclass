@@ -1,0 +1,23 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Replace the literal :genre "fantasy" / "scifi" / etc. on each :Book
+# with a structured :hasGenre link to the matching SKOS concept in the
+# :GenreScheme. This is the moment where the graph stops being a bag
+# of strings and starts being a proper semantic network.
+
+DELETE {
+    ?book :genre ?genre_string .
+}
+INSERT {
+    ?book :hasGenre ?concept .
+}
+WHERE {
+    ?book a :Book ;
+          :genre ?genre_string .
+    ?concept a skos:Concept ;
+             skos:inScheme :GenreScheme ;
+             skos:prefLabel ?label .
+    FILTER(STR(?label) = ?genre_string)
+}

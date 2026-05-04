@@ -1,0 +1,264 @@
+@prefix : <http://data.treehouse.example/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix schema: <http://schema.org/> .
+@base <http://data.treehouse.example/> .
+
+<c> rdf:type owl:Ontology ;
+    rdfs:comment "A small ontology for fantasy and sci-fi creative works — authors, books, series and adaptations."@en ;
+    rdfs:label "Creative Works lite"@en ;
+    dct:description "Connects local concepts to BIBO (bibliographic ontology), Schema.org, SKOS (vocabularies) and DCAT (data catalog) standards."@en .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.treehouse.example/wrote
+:wrote rdf:type owl:ObjectProperty ;
+       rdfs:domain :Author ;
+       rdfs:range :Book ;
+       rdfs:comment "An author wrote a book."@en ;
+       rdfs:label "wrote"@en .
+
+
+###  http://data.treehouse.example/partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :Book ;
+        rdfs:range :Series ;
+        rdfs:comment "A book is part of a series."@en ;
+        rdfs:label "part of"@en .
+
+
+###  http://data.treehouse.example/nextInSeries
+###  Connects a book to the book that immediately follows it in the same series.
+:nextInSeries rdf:type owl:ObjectProperty ;
+              rdfs:domain :Book ;
+              rdfs:range :Book ;
+              rdfs:comment "Links a book to its successor in the same series."@en ;
+              rdfs:label "next in series"@en .
+
+
+###  http://data.treehouse.example/basedOn
+:basedOn rdf:type owl:ObjectProperty ;
+         rdfs:domain :Adaptation ;
+         rdfs:range :Book ;
+         rdfs:comment "An adaptation is based on a book."@en ;
+         rdfs:label "based on"@en .
+
+
+###  http://data.treehouse.example/hasGenre
+###  Links a book to its SKOS concept in the GenreScheme.
+:hasGenre rdf:type owl:ObjectProperty ;
+          rdfs:domain :Book ;
+          rdfs:range skos:Concept ;
+          rdfs:comment "Links a book to its SKOS genre concept."@en ;
+          rdfs:label "has genre"@en .
+
+
+###  http://data.treehouse.example/hasEra
+###  Links an author to their SKOS era concept.
+:hasEra rdf:type owl:ObjectProperty ;
+        rdfs:domain :Author ;
+        rdfs:range skos:Concept ;
+        rdfs:comment "Links an author to their literary era SKOS concept."@en ;
+        rdfs:label "has era"@en .
+
+
+###  http://data.treehouse.example/hasAdaptationType
+:hasAdaptationType rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Adaptation ;
+                   rdfs:range skos:Concept ;
+                   rdfs:comment "Links an adaptation to its SKOS adaptation-type concept."@en ;
+                   rdfs:label "has adaptation type"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://data.treehouse.example/birthYear
+:birthYear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Author ;
+           rdfs:range xsd:long ;
+           rdfs:label "birth year"@en .
+
+
+###  http://data.treehouse.example/deathYear
+:deathYear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Author ;
+           rdfs:range xsd:long ;
+           rdfs:label "death year"@en .
+
+
+###  http://data.treehouse.example/nationality
+:nationality rdf:type owl:ObjectProperty ;
+             rdfs:domain :Author ;
+             rdfs:range :Country ;
+             rdfs:label "nationality"@en .
+
+
+###  http://data.treehouse.example/era
+:era rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Author ;
+     rdfs:range xsd:string ;
+     rdfs:label "era"@en .
+
+
+###  http://data.treehouse.example/publicationYear
+:publicationYear rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Book ;
+                 rdfs:range xsd:long ;
+                 rdfs:label "publication year"@en .
+
+
+###  http://data.treehouse.example/pageCount
+:pageCount rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Book ;
+           rdfs:range xsd:long ;
+           rdfs:label "page count"@en .
+
+
+###  http://data.treehouse.example/genre
+:genre rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Book ;
+       rdfs:range xsd:string ;
+       rdfs:label "genre"@en .
+
+
+###  http://data.treehouse.example/isbn
+:isbn rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Book ;
+      rdfs:range xsd:string ;
+      rdfs:label "ISBN"@en .
+
+
+###  http://data.treehouse.example/positionInSeries
+:positionInSeries rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Book ;
+                  rdfs:range xsd:long ;
+                  rdfs:label "position in series"@en .
+
+
+###  http://data.treehouse.example/startedYear
+:startedYear rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Series ;
+             rdfs:range xsd:long ;
+             rdfs:label "started year"@en .
+
+
+###  http://data.treehouse.example/seriesStatus
+:seriesStatus rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Series ;
+              rdfs:range xsd:string ;
+              rdfs:label "series status"@en .
+
+
+###  http://data.treehouse.example/adaptationType
+:adaptationType rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Adaptation ;
+                rdfs:range xsd:string ;
+                rdfs:label "adaptation type"@en .
+
+
+###  http://data.treehouse.example/releaseYear
+:releaseYear rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Adaptation ;
+             rdfs:range xsd:long ;
+             rdfs:label "release year"@en .
+
+
+###  http://data.treehouse.example/director
+:director rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Adaptation ;
+          rdfs:range xsd:string ;
+          rdfs:label "director"@en .
+
+
+###  http://data.treehouse.example/runtimeMinutes
+:runtimeMinutes rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Adaptation ;
+                rdfs:range xsd:long ;
+                rdfs:label "runtime (minutes)"@en .
+
+
+###  http://data.treehouse.example/imdbRating
+:imdbRating rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Adaptation ;
+            rdfs:range xsd:double ;
+            rdfs:label "IMDb rating"@en .
+
+
+#################################################################
+#    Classes
+#    Aligned to public bibliographic vocabularies where possible:
+#    - BIBO  (Bibliographic Ontology)  http://purl.org/ontology/bibo/
+#    - Schema.org Person/Movie/TVSeries/RadioSeries
+#    - SKOS concept schemes are defined in vocab.ttl
+#    - DCAT catalog metadata is defined in catalog.ttl
+#################################################################
+
+###  http://data.treehouse.example/Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf schema:Person ;
+        rdfs:label "Author"@en ;
+        rdfs:comment "A person who wrote one or more books."@en .
+
+
+###  http://data.treehouse.example/Book
+:Book rdf:type owl:Class ;
+      rdfs:subClassOf bibo:Book ;
+      rdfs:label "Book"@en ;
+      rdfs:comment "A published book — typically a novel — by one of the authors in the catalog."@en .
+
+
+###  http://data.treehouse.example/Series
+:Series rdf:type owl:Class ;
+        rdfs:subClassOf bibo:Series ;
+        rdfs:label "Book Series"@en ;
+        rdfs:comment "A sequence of related books, usually sharing setting, characters or themes."@en .
+
+
+###  http://data.treehouse.example/Adaptation
+###  Could be a film, TV series, radio play or animated work.
+:Adaptation rdf:type owl:Class ;
+            rdfs:subClassOf schema:CreativeWork ;
+            rdfs:label "Adaptation"@en ;
+            rdfs:comment "A derivative work — film, TV series, radio play, animation — based on a book."@en .
+
+
+###  http://data.treehouse.example/Country
+:Country rdf:type owl:Class ;
+         rdfs:label "Country"@en .
+
+
+###  http://data.treehouse.example/AdaptedWork
+###  Tag class — books that have at least one adaptation. Filled in by the
+###  Datalog rule in rule.dlog.
+:AdaptedWork rdf:type owl:Class ;
+             rdfs:subClassOf :Book ;
+             rdfs:label "Adapted work"@en ;
+             rdfs:comment "A book that has been adapted into at least one film, TV series, etc."@en .
+
+
+###  http://data.treehouse.example/GoldenAgeBook
+###  Books published in the SF/F Golden Age (pre-1960). Filled in by Datalog.
+:GoldenAgeBook rdf:type owl:Class ;
+               rdfs:subClassOf :Book ;
+               rdfs:label "Golden-age book"@en ;
+               rdfs:comment "A book published before 1960."@en .
+
+
+###  http://data.treehouse.example/ModernEraBook
+###  Books published from 1980 onwards. Filled in by Datalog.
+:ModernEraBook rdf:type owl:Class ;
+               rdfs:subClassOf :Book ;
+               rdfs:label "Modern-era book"@en ;
+               rdfs:comment "A book published in 1980 or later."@en .

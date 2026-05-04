@@ -1,0 +1,769 @@
+@prefix : <http://data.treehouse.example/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix author: <http://data.treehouse.example/author/> .
+@prefix series: <http://data.treehouse.example/series/> .
+@prefix adaptation: <http://data.treehouse.example/adaptation/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix book: <http://data.treehouse.example/book/> .
+@prefix country: <http://data.treehouse.example/country/> .
+@prefix def: <urn:maplib_default:> .
+@prefix ottr: <http://ns.ottr.xyz/0.4/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+author:adams    a :Author ; 
+    :birthYear "1952"^^xsd:long ;
+    :deathYear "2001"^^xsd:long ;
+    :hasAdaptation adaptation:hhgtg_film, adaptation:hhgtg_radio ;
+    :hasEra :ModernEra ;
+    :nationality country:UK ;
+    :wrote book:hhgtg, book:restaurant ;
+    rdfs:label "Douglas Adams" .
+
+author:asimov    a :Author ; 
+    :birthYear "1920"^^xsd:long ;
+    :deathYear "1992"^^xsd:long ;
+    :hasAdaptation adaptation:foundation_tv ;
+    :hasEra :GoldenAge ;
+    :nationality country:US ;
+    :wrote book:foundation, book:foundation_empire, book:second_foundation ;
+    rdfs:label "Isaac Asimov" .
+
+author:herbert    a :Author ; 
+    :birthYear "1920"^^xsd:long ;
+    :deathYear "1986"^^xsd:long ;
+    :hasAdaptation adaptation:dune_lynch, adaptation:dune_villeneuve ;
+    :hasEra :NewWave ;
+    :nationality country:US ;
+    :wrote book:children_of_dune, book:dune, book:dune_messiah ;
+    rdfs:label "Frank Herbert" .
+
+author:le_guin    a :Author ; 
+    :birthYear "1929"^^xsd:long ;
+    :deathYear "2018"^^xsd:long ;
+    :hasAdaptation adaptation:earthsea_ghibli ;
+    :hasEra :NewWave ;
+    :nationality country:US ;
+    :wrote book:tombs_of_atuan, book:wizard_earthsea ;
+    rdfs:label "Ursula K. Le Guin" .
+
+author:pratchett    a :Author ; 
+    :birthYear "1948"^^xsd:long ;
+    :deathYear "2015"^^xsd:long ;
+    :hasEra :ModernEra ;
+    :nationality country:UK ;
+    :wrote book:colour_of_magic, book:guards_guards, book:mort ;
+    rdfs:label "Terry Pratchett" .
+
+author:tolkien    a :Author ; 
+    :birthYear "1892"^^xsd:long ;
+    :deathYear "1973"^^xsd:long ;
+    :hasAdaptation adaptation:fellowship_film, adaptation:hobbit_film, adaptation:return_king_film, adaptation:two_towers_film ;
+    :hasEra :Modernist ;
+    :nationality country:UK ;
+    :wrote book:fellowship, book:hobbit, book:return_king, book:two_towers ;
+    rdfs:label "J.R.R. Tolkien" .
+
+book:children_of_dune    a :Book ; 
+    :hasGenre :ScienceFiction ;
+    :isbn "9780441104024" ;
+    :partOf series:dune_chronicles ;
+    :positionInSeries "3"^^xsd:long ;
+    :publicationYear "1976"^^xsd:long ;
+    :readingOrder "3"^^xsd:integer ;
+    :writtenBy author:herbert ;
+    rdfs:label "Children of Dune" .
+
+book:colour_of_magic    a :Book, :ModernEraBook ; 
+    :hasGenre :ComicFantasy ;
+    :isbn "9780062225672" ;
+    :nextInSeries book:mort ;
+    :partOf series:discworld ;
+    :positionInSeries "1"^^xsd:long ;
+    :publicationYear "1983"^^xsd:long ;
+    :readingOrder "1"^^xsd:integer ;
+    :writtenBy author:pratchett ;
+    rdfs:label "The Colour of Magic" .
+
+book:dune    a :Book, :AdaptedWork ; 
+    :hasGenre :ScienceFiction ;
+    :isbn "9780441172719" ;
+    :nextInSeries book:dune_messiah ;
+    :partOf series:dune_chronicles ;
+    :positionInSeries "1"^^xsd:long ;
+    :publicationYear "1965"^^xsd:long ;
+    :readingOrder "1"^^xsd:integer ;
+    :writtenBy author:herbert ;
+    rdfs:label "Dune" .
+
+book:dune_messiah    a :Book ; 
+    :hasGenre :ScienceFiction ;
+    :isbn "9780441172696" ;
+    :nextInSeries book:children_of_dune ;
+    :partOf series:dune_chronicles ;
+    :positionInSeries "2"^^xsd:long ;
+    :publicationYear "1969"^^xsd:long ;
+    :readingOrder "2"^^xsd:integer ;
+    :writtenBy author:herbert ;
+    rdfs:label "Dune Messiah" .
+
+book:fellowship    a :Book, :AdaptedWork ; 
+    :hasGenre :Fantasy ;
+    :isbn "9780547928210" ;
+    :nextInSeries book:two_towers ;
+    :partOf series:lotr ;
+    :positionInSeries "1"^^xsd:long ;
+    :publicationYear "1954"^^xsd:long ;
+    :readingOrder "1"^^xsd:integer ;
+    :writtenBy author:tolkien ;
+    rdfs:label "The Fellowship of the Ring" .
+
+book:foundation    a :Book, :AdaptedWork ; 
+    :hasGenre :ScienceFiction ;
+    :isbn "9780553293357" ;
+    :nextInSeries book:foundation_empire ;
+    :partOf series:foundation ;
+    :positionInSeries "1"^^xsd:long ;
+    :publicationYear "1951"^^xsd:long ;
+    :readingOrder "1"^^xsd:integer ;
+    :writtenBy author:asimov ;
+    rdfs:label "Foundation" .
+
+book:foundation_empire    a :Book ; 
+    :hasGenre :ScienceFiction ;
+    :isbn "9780553293371" ;
+    :nextInSeries book:second_foundation ;
+    :partOf series:foundation ;
+    :positionInSeries "2"^^xsd:long ;
+    :publicationYear "1952"^^xsd:long ;
+    :readingOrder "2"^^xsd:integer ;
+    :writtenBy author:asimov ;
+    rdfs:label "Foundation and Empire" .
+
+book:guards_guards    a :Book, :ModernEraBook ; 
+    :hasGenre :ComicFantasy ;
+    :isbn "9780062225733" ;
+    :partOf series:discworld ;
+    :positionInSeries "8"^^xsd:long ;
+    :publicationYear "1989"^^xsd:long ;
+    :readingOrder "3"^^xsd:integer ;
+    :writtenBy author:pratchett ;
+    rdfs:label "Guards! Guards!" .
+
+book:hhgtg    a :Book, :AdaptedWork ; 
+    :hasGenre :ComicScifi ;
+    :isbn "9780345391803" ;
+    :nextInSeries book:restaurant ;
+    :partOf series:hitchhikers ;
+    :positionInSeries "1"^^xsd:long ;
+    :publicationYear "1979"^^xsd:long ;
+    :readingOrder "1"^^xsd:integer ;
+    :writtenBy author:adams ;
+    rdfs:label "The Hitchhiker's Guide to the Galaxy" .
+
+book:hobbit    a :Book, :AdaptedWork ; 
+    :hasGenre :Fantasy ;
+    :isbn "9780547928227" ;
+    :partOf series:the_hobbit ;
+    :positionInSeries "1"^^xsd:long ;
+    :publicationYear "1937"^^xsd:long ;
+    :readingOrder "1"^^xsd:integer ;
+    :writtenBy author:tolkien ;
+    rdfs:label "The Hobbit" .
+
+book:mort    a :Book, :ModernEraBook ; 
+    :hasGenre :ComicFantasy ;
+    :isbn "9780062225719" ;
+    :nextInSeries book:guards_guards ;
+    :partOf series:discworld ;
+    :positionInSeries "4"^^xsd:long ;
+    :publicationYear "1987"^^xsd:long ;
+    :readingOrder "2"^^xsd:integer ;
+    :writtenBy author:pratchett ;
+    rdfs:label "Mort" .
+
+book:restaurant    a :Book, :ModernEraBook ; 
+    :hasGenre :ComicScifi ;
+    :isbn "9780345391810" ;
+    :partOf series:hitchhikers ;
+    :positionInSeries "2"^^xsd:long ;
+    :publicationYear "1980"^^xsd:long ;
+    :readingOrder "2"^^xsd:integer ;
+    :writtenBy author:adams ;
+    rdfs:label "The Restaurant at the End of the Universe" .
+
+adaptation:dune_lynch    a :Adaptation ; 
+    :basedOn book:dune ;
+    :director "David Lynch" ;
+    :hasAdaptationType :FilmAdaptation ;
+    :imdbRating "6.3"^^xsd:double ;
+    :inspiredBy author:herbert ;
+    :releaseYear "1984"^^xsd:long ;
+    :runtimeMinutes "137"^^xsd:long ;
+    :siblingAdaptation adaptation:dune_villeneuve ;
+    rdfs:label "Dune" .
+
+adaptation:dune_villeneuve    a :Adaptation ; 
+    :basedOn book:dune ;
+    :director "Denis Villeneuve" ;
+    :hasAdaptationType :FilmAdaptation ;
+    :imdbRating "8.0"^^xsd:double ;
+    :inspiredBy author:herbert ;
+    :releaseYear "2021"^^xsd:long ;
+    :runtimeMinutes "155"^^xsd:long ;
+    :siblingAdaptation adaptation:dune_lynch ;
+    rdfs:label "Dune: Part One" .
+
+adaptation:earthsea_ghibli    a :Adaptation ; 
+    :basedOn book:tombs_of_atuan ;
+    :director "Goro Miyazaki" ;
+    :hasAdaptationType :AnimationAdaptation ;
+    :imdbRating "6.3"^^xsd:double ;
+    :inspiredBy author:le_guin ;
+    :releaseYear "2006"^^xsd:long ;
+    :runtimeMinutes "115"^^xsd:long ;
+    rdfs:label "Tales from Earthsea" .
+
+adaptation:fellowship_film    a :Adaptation ; 
+    :basedOn book:fellowship ;
+    :director "Peter Jackson" ;
+    :hasAdaptationType :FilmAdaptation ;
+    :imdbRating "8.9"^^xsd:double ;
+    :inspiredBy author:tolkien ;
+    :releaseYear "2001"^^xsd:long ;
+    :runtimeMinutes "178"^^xsd:long ;
+    rdfs:label "The Lord of the Rings: The Fellowship of the Ring" .
+
+adaptation:foundation_tv    a :Adaptation ; 
+    :basedOn book:foundation ;
+    :director "David S. Goyer" ;
+    :hasAdaptationType :TVSeriesAdaptation ;
+    :imdbRating "7.4"^^xsd:double ;
+    :inspiredBy author:asimov ;
+    :releaseYear "2021"^^xsd:long ;
+    :runtimeMinutes "60"^^xsd:long ;
+    rdfs:label "Foundation" .
+
+adaptation:hhgtg_film    a :Adaptation ; 
+    :basedOn book:hhgtg ;
+    :director "Garth Jennings" ;
+    :hasAdaptationType :FilmAdaptation ;
+    :imdbRating "6.7"^^xsd:double ;
+    :inspiredBy author:adams ;
+    :releaseYear "2005"^^xsd:long ;
+    :runtimeMinutes "109"^^xsd:long ;
+    :siblingAdaptation adaptation:hhgtg_radio ;
+    rdfs:label "The Hitchhiker's Guide to the Galaxy" .
+
+adaptation:hhgtg_radio    a :Adaptation ; 
+    :basedOn book:hhgtg ;
+    :director "Douglas Adams" ;
+    :hasAdaptationType :RadioAdaptation ;
+    :imdbRating "8.5"^^xsd:double ;
+    :inspiredBy author:adams ;
+    :releaseYear "1978"^^xsd:long ;
+    :runtimeMinutes "30"^^xsd:long ;
+    :siblingAdaptation adaptation:hhgtg_film ;
+    rdfs:label "The Hitchhiker's Guide to the Galaxy" .
+
+adaptation:hobbit_film    a :Adaptation ; 
+    :basedOn book:hobbit ;
+    :director "Peter Jackson" ;
+    :hasAdaptationType :FilmAdaptation ;
+    :imdbRating "7.8"^^xsd:double ;
+    :inspiredBy author:tolkien ;
+    :releaseYear "2012"^^xsd:long ;
+    :runtimeMinutes "169"^^xsd:long ;
+    rdfs:label "The Hobbit: An Unexpected Journey" .
+
+adaptation:return_king_film    a :Adaptation ; 
+    :basedOn book:return_king ;
+    :director "Peter Jackson" ;
+    :hasAdaptationType :FilmAdaptation ;
+    :imdbRating "9.0"^^xsd:double ;
+    :inspiredBy author:tolkien ;
+    :releaseYear "2003"^^xsd:long ;
+    :runtimeMinutes "201"^^xsd:long ;
+    rdfs:label "The Lord of the Rings: The Return of the King" .
+
+adaptation:two_towers_film    a :Adaptation ; 
+    :basedOn book:two_towers ;
+    :director "Peter Jackson" ;
+    :hasAdaptationType :FilmAdaptation ;
+    :imdbRating "8.8"^^xsd:double ;
+    :inspiredBy author:tolkien ;
+    :releaseYear "2002"^^xsd:long ;
+    :runtimeMinutes "179"^^xsd:long ;
+    rdfs:label "The Lord of the Rings: The Two Towers" .
+
+:Adaptation    a owl:Class ; 
+    rdfs:comment "A derivative work — film, TV series, radio play, animation — based on a book."@en ;
+    rdfs:label "Adaptation"@en ;
+    rdfs:subClassOf <http://schema.org/CreativeWork> .
+
+:AdaptedWork    a owl:Class ; 
+    rdfs:comment "A book that has been adapted into at least one film, TV series, etc."@en ;
+    rdfs:label "Adapted work"@en ;
+    rdfs:subClassOf :Book .
+
+:Author    a owl:Class ; 
+    rdfs:comment "A person who wrote one or more books."@en ;
+    rdfs:label "Author"@en ;
+    rdfs:subClassOf <http://schema.org/Person> .
+
+:Book    a owl:Class ; 
+    rdfs:comment "A published book — typically a novel — by one of the authors in the catalog."@en ;
+    rdfs:label "Book"@en ;
+    rdfs:subClassOf <http://purl.org/ontology/bibo/Book> .
+
+:Country    a owl:Class ; 
+    rdfs:label "Country"@en .
+
+:GoldenAgeBook    a owl:Class ; 
+    rdfs:comment "A book published before 1960."@en ;
+    rdfs:label "Golden-age book"@en ;
+    rdfs:subClassOf :Book .
+
+:ModernEraBook    a owl:Class ; 
+    rdfs:comment "A book published in 1980 or later."@en ;
+    rdfs:label "Modern-era book"@en ;
+    rdfs:subClassOf :Book .
+
+:Series    a owl:Class ; 
+    rdfs:comment "A sequence of related books, usually sharing setting, characters or themes."@en ;
+    rdfs:label "Book Series"@en ;
+    rdfs:subClassOf <http://purl.org/ontology/bibo/Series> .
+
+:adaptationType    a owl:DatatypeProperty ; 
+    rdfs:domain :Adaptation ;
+    rdfs:label "adaptation type"@en ;
+    rdfs:range xsd:string .
+
+:basedOn    a owl:ObjectProperty ; 
+    rdfs:comment "An adaptation is based on a book."@en ;
+    rdfs:domain :Adaptation ;
+    rdfs:label "based on"@en ;
+    rdfs:range :Book .
+
+:birthYear    a owl:DatatypeProperty ; 
+    rdfs:domain :Author ;
+    rdfs:label "birth year"@en ;
+    rdfs:range xsd:long .
+
+:AdaptationTypeScheme    a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ; 
+    <http://purl.org/dc/terms/description> "Controlled vocabulary for adaptation media."@en ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Adaptation Types"@en .
+
+:AnimationAdaptation    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#altLabel> "animated film"@en ;
+    <http://www.w3.org/2004/02/skos/core#broader> :FilmAdaptation ;
+    <http://www.w3.org/2004/02/skos/core#definition> "An animated motion picture."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :AdaptationTypeScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "animation"@en .
+
+:ComicFantasy    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#altLabel> "humorous fantasy"@en ;
+    <http://www.w3.org/2004/02/skos/core#broader> :Fantasy ;
+    <http://www.w3.org/2004/02/skos/core#definition> "Fantasy that uses humour and satire as a primary mode."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :GenreScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "comic_fantasy"@en .
+
+:ComicScifi    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#altLabel> "humorous science fiction"@en ;
+    <http://www.w3.org/2004/02/skos/core#broader> :ScienceFiction ;
+    <http://www.w3.org/2004/02/skos/core#definition> "Science fiction with a comedic or absurdist tone."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :GenreScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "comic_scifi"@en .
+
+:EraScheme    a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ; 
+    <http://purl.org/dc/terms/description> "Controlled vocabulary for literary eras of speculative fiction."@en ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Literary Eras"@en .
+
+:Fantasy    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#definition> "Fiction featuring magical or supernatural elements, often in invented worlds."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :GenreScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "fantasy"@en .
+
+:FilmAdaptation    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#definition> "A theatrically-released motion picture."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :AdaptationTypeScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "film"@en .
+
+:GenreScheme    a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ; 
+    <http://purl.org/dc/terms/description> "Controlled vocabulary for book genres in the creative-works catalog."@en ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Book Genres"@en .
+
+:GoldenAge    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#altLabel> "Golden Age of Science Fiction"@en ;
+    <http://www.w3.org/2004/02/skos/core#definition> "Roughly 1938–1960; characterised by Astounding-era hard SF and pulp fantasy."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :EraScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "golden_age"@en .
+
+:ModernEra    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#definition> "1980-onwards; from cyberpunk and second-world fantasy to contemporary speculative fiction."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :EraScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "modern"@en ;
+    <http://www.w3.org/2004/02/skos/core#related> :NewWave .
+
+:Modernist    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#definition> "Pre-Golden-Age authors whose work shaped 20th-century fantasy."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :EraScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "modernist"@en .
+
+:NewWave    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#definition> "1960s–1970s; literary experimentation, soft sciences, and social themes."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :EraScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "new_wave"@en ;
+    <http://www.w3.org/2004/02/skos/core#related> :GoldenAge .
+
+:RadioAdaptation    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#definition> "A radio play or radio series."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :AdaptationTypeScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "radio"@en .
+
+:ScienceFiction    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#altLabel> "science fiction"@en ;
+    <http://www.w3.org/2004/02/skos/core#definition> "Speculative fiction grounded in science, technology, and their imagined consequences."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :GenreScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "scifi"@en .
+
+:TVSeriesAdaptation    a <http://www.w3.org/2004/02/skos/core#Concept> ; 
+    <http://www.w3.org/2004/02/skos/core#altLabel> "television series"@en ;
+    <http://www.w3.org/2004/02/skos/core#definition> "An episodic television series."@en ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> :AdaptationTypeScheme ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "tv_series"@en .
+
+:AdaptationsDataset    a <http://www.w3.org/ns/dcat#Dataset> ; 
+    <http://purl.org/dc/terms/description> "Films, TV series, radio plays and animated adaptations. Each links back to a source book."@en ;
+    <http://purl.org/dc/terms/title> "Adaptations Catalog"@en ;
+    <http://www.w3.org/ns/dcat#distribution> :AdaptationsDistribution ;
+    <http://www.w3.org/ns/dcat#theme> :AdaptationTypeScheme .
+
+:AdaptationsDistribution    a <http://www.w3.org/ns/dcat#Distribution> ; 
+    <http://purl.org/dc/terms/format> "CSV" ;
+    <http://www.w3.org/ns/dcat#accessURL> <file:///data/adaptations.csv> ;
+    <http://www.w3.org/ns/dcat#mediaType> "text/csv" .
+
+:AuthorsDataset    a <http://www.w3.org/ns/dcat#Dataset> ; 
+    <http://purl.org/dc/terms/description> "Author records with name, birth/death year, nationality and literary era. Sourced as Parquet — the native columnar format of Databricks and lakehouse architectures."@en ;
+    <http://purl.org/dc/terms/title> "Author Master Data"@en ;
+    <http://www.w3.org/ns/dcat#distribution> :AuthorsDistribution ;
+    <http://www.w3.org/ns/dcat#theme> :EraScheme .
+
+:AuthorsDistribution    a <http://www.w3.org/ns/dcat#Distribution> ; 
+    <http://purl.org/dc/terms/format> "Parquet" ;
+    <http://www.w3.org/ns/dcat#accessURL> <file:///data/authors.parquet> ;
+    <http://www.w3.org/ns/dcat#mediaType> "application/vnd.apache.parquet" .
+
+:BooksDataset    a <http://www.w3.org/ns/dcat#Dataset> ; 
+    <http://purl.org/dc/terms/description> "Book records with title, ISBN, author, series, position-in-series, publication year, page count and genre. Classic CSV flat-file exchange format."@en ;
+    <http://purl.org/dc/terms/title> "Book Catalog"@en ;
+    <http://www.w3.org/ns/dcat#distribution> :BooksDistribution ;
+    <http://www.w3.org/ns/dcat#theme> :GenreScheme .
+
+:BooksDistribution    a <http://www.w3.org/ns/dcat#Distribution> ; 
+    <http://purl.org/dc/terms/format> "CSV" ;
+    <http://www.w3.org/ns/dcat#accessURL> <file:///data/books.csv> ;
+    <http://www.w3.org/ns/dcat#mediaType> "text/csv" .
+
+:CreativeWorksCatalog    a <http://www.w3.org/ns/dcat#Catalog> ; 
+    <http://purl.org/dc/terms/description> "A catalog of the four data sources used in the creative-works masterclass: authors, series, books, and adaptations."@en ;
+    <http://purl.org/dc/terms/publisher> :2Treehouse ;
+    <http://purl.org/dc/terms/title> "Fantasy & Sci-Fi Creative Works — Data Catalog"@en ;
+    <http://www.w3.org/ns/dcat#dataset> :AdaptationsDataset, :AuthorsDataset, :BooksDataset, :SeriesDataset .
+
+:SeriesDataset    a <http://www.w3.org/ns/dcat#Dataset> ; 
+    <http://purl.org/dc/terms/description> "Series records with name, started year, status and a short description."@en ;
+    <http://purl.org/dc/terms/title> "Book Series Catalog"@en ;
+    <http://www.w3.org/ns/dcat#distribution> :SeriesDistribution .
+
+:SeriesDistribution    a <http://www.w3.org/ns/dcat#Distribution> ; 
+    <http://purl.org/dc/terms/format> "CSV" ;
+    <http://www.w3.org/ns/dcat#accessURL> <file:///data/series.csv> ;
+    <http://www.w3.org/ns/dcat#mediaType> "text/csv" .
+
+country:UK    a :Country .
+
+country:US    a :Country .
+
+series:discworld    a :Series ; 
+    :hasBook book:colour_of_magic, book:guards_guards, book:mort ;
+    :seriesStatus "completed" ;
+    :startedYear "1983"^^xsd:long ;
+    rdfs:comment "Comic fantasy set on a flat world resting on the back of four elephants standing on the giant turtle Great A'Tuin." ;
+    rdfs:label "Discworld" .
+
+series:dune_chronicles    a :Series ; 
+    :hasBook book:children_of_dune, book:dune, book:dune_messiah ;
+    :seriesStatus "completed" ;
+    :startedYear "1965"^^xsd:long ;
+    rdfs:comment "Political and ecological epic on the desert planet Arrakis." ;
+    rdfs:label "Dune Chronicles" .
+
+series:earthsea    a :Series ; 
+    :hasBook book:tombs_of_atuan, book:wizard_earthsea ;
+    :seriesStatus "completed" ;
+    :startedYear "1968"^^xsd:long ;
+    rdfs:comment "Coming-of-age fantasy across an island archipelago." ;
+    rdfs:label "Earthsea Cycle" .
+
+series:foundation    a :Series ; 
+    :hasBook book:foundation, book:foundation_empire, book:second_foundation ;
+    :seriesStatus "completed" ;
+    :startedYear "1951"^^xsd:long ;
+    rdfs:comment "Hari Seldon's psychohistory and the rise and fall of the Galactic Empire." ;
+    rdfs:label "Foundation Trilogy" .
+
+series:hitchhikers    a :Series ; 
+    :hasBook book:hhgtg, book:restaurant ;
+    :seriesStatus "completed" ;
+    :startedYear "1979"^^xsd:long ;
+    rdfs:comment "Comedic sci-fi about Arthur Dent and the answer to life, the universe, and everything." ;
+    rdfs:label "Hitchhiker's Guide to the Galaxy" .
+
+series:lotr    a :Series ; 
+    :hasBook book:fellowship, book:return_king, book:two_towers ;
+    :seriesStatus "completed" ;
+    :startedYear "1954"^^xsd:long ;
+    rdfs:comment "The epic high-fantasy trilogy set in Middle-earth." ;
+    rdfs:label "The Lord of the Rings" .
+
+series:the_hobbit    a :Series ; 
+    :hasBook book:hobbit ;
+    :seriesStatus "completed" ;
+    :startedYear "1937"^^xsd:long ;
+    rdfs:comment "Bilbo Baggins's there-and-back-again adventure with the dwarves." ;
+    rdfs:label "The Hobbit" .
+
+book:return_king    a :Book, :AdaptedWork ; 
+    :hasGenre :Fantasy ;
+    :isbn "9780547928197" ;
+    :partOf series:lotr ;
+    :positionInSeries "3"^^xsd:long ;
+    :publicationYear "1955"^^xsd:long ;
+    :readingOrder "3"^^xsd:integer ;
+    :writtenBy author:tolkien ;
+    rdfs:label "The Return of the King" .
+
+book:second_foundation    a :Book ; 
+    :hasGenre :ScienceFiction ;
+    :isbn "9780553293364" ;
+    :partOf series:foundation ;
+    :positionInSeries "3"^^xsd:long ;
+    :publicationYear "1953"^^xsd:long ;
+    :readingOrder "3"^^xsd:integer ;
+    :writtenBy author:asimov ;
+    rdfs:label "Second Foundation" .
+
+book:tombs_of_atuan    a :Book, :AdaptedWork ; 
+    :hasGenre :Fantasy ;
+    :isbn "9780689845369" ;
+    :partOf series:earthsea ;
+    :positionInSeries "2"^^xsd:long ;
+    :publicationYear "1971"^^xsd:long ;
+    :readingOrder "2"^^xsd:integer ;
+    :writtenBy author:le_guin ;
+    rdfs:label "The Tombs of Atuan" .
+
+book:two_towers    a :Book, :AdaptedWork ; 
+    :hasGenre :Fantasy ;
+    :isbn "9780547928203" ;
+    :nextInSeries book:return_king ;
+    :partOf series:lotr ;
+    :positionInSeries "2"^^xsd:long ;
+    :publicationYear "1954"^^xsd:long ;
+    :readingOrder "2"^^xsd:integer ;
+    :writtenBy author:tolkien ;
+    rdfs:label "The Two Towers" .
+
+book:wizard_earthsea    a :Book ; 
+    :hasGenre :Fantasy ;
+    :isbn "9780547722023" ;
+    :nextInSeries book:tombs_of_atuan ;
+    :partOf series:earthsea ;
+    :positionInSeries "1"^^xsd:long ;
+    :publicationYear "1968"^^xsd:long ;
+    :readingOrder "1"^^xsd:integer ;
+    :writtenBy author:le_guin ;
+    rdfs:label "A Wizard of Earthsea" .
+
+:c    a owl:Ontology ; 
+    <http://purl.org/dc/terms/description> "Connects local concepts to BIBO (bibliographic ontology), Schema.org, SKOS (vocabularies) and DCAT (data catalog) standards."@en ;
+    rdfs:comment "A small ontology for fantasy and sci-fi creative works — authors, books, series and adaptations."@en ;
+    rdfs:label "Creative Works lite"@en .
+
+:deathYear    a owl:DatatypeProperty ; 
+    rdfs:domain :Author ;
+    rdfs:label "death year"@en ;
+    rdfs:range xsd:long .
+
+:director    a owl:DatatypeProperty ; 
+    rdfs:domain :Adaptation ;
+    rdfs:label "director"@en ;
+    rdfs:range xsd:string .
+
+:era    a owl:DatatypeProperty ; 
+    rdfs:domain :Author ;
+    rdfs:label "era"@en ;
+    rdfs:range xsd:string .
+
+:genre    a owl:DatatypeProperty ; 
+    rdfs:domain :Book ;
+    rdfs:label "genre"@en ;
+    rdfs:range xsd:string .
+
+:hasAdaptationType    a owl:ObjectProperty ; 
+    rdfs:comment "Links an adaptation to its SKOS adaptation-type concept."@en ;
+    rdfs:domain :Adaptation ;
+    rdfs:label "has adaptation type"@en ;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+:hasEra    a owl:ObjectProperty ; 
+    rdfs:comment "Links an author to their literary era SKOS concept."@en ;
+    rdfs:domain :Author ;
+    rdfs:label "has era"@en ;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+:hasGenre    a owl:ObjectProperty ; 
+    rdfs:comment "Links a book to its SKOS genre concept."@en ;
+    rdfs:domain :Book ;
+    rdfs:label "has genre"@en ;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+:imdbRating    a owl:DatatypeProperty ; 
+    rdfs:domain :Adaptation ;
+    rdfs:label "IMDb rating"@en ;
+    rdfs:range xsd:double .
+
+:isbn    a owl:DatatypeProperty ; 
+    rdfs:domain :Book ;
+    rdfs:label "ISBN"@en ;
+    rdfs:range xsd:string .
+
+:nationality    a owl:ObjectProperty ; 
+    rdfs:domain :Author ;
+    rdfs:label "nationality"@en ;
+    rdfs:range :Country .
+
+:nextInSeries    a owl:ObjectProperty ; 
+    rdfs:comment "Links a book to its successor in the same series."@en ;
+    rdfs:domain :Book ;
+    rdfs:label "next in series"@en ;
+    rdfs:range :Book .
+
+:pageCount    a owl:DatatypeProperty ; 
+    rdfs:domain :Book ;
+    rdfs:label "page count"@en ;
+    rdfs:range xsd:long .
+
+:partOf    a owl:ObjectProperty ; 
+    rdfs:comment "A book is part of a series."@en ;
+    rdfs:domain :Book ;
+    rdfs:label "part of"@en ;
+    rdfs:range :Series .
+
+:positionInSeries    a owl:DatatypeProperty ; 
+    rdfs:domain :Book ;
+    rdfs:label "position in series"@en ;
+    rdfs:range xsd:long .
+
+:publicationYear    a owl:DatatypeProperty ; 
+    rdfs:domain :Book ;
+    rdfs:label "publication year"@en ;
+    rdfs:range xsd:long .
+
+:releaseYear    a owl:DatatypeProperty ; 
+    rdfs:domain :Adaptation ;
+    rdfs:label "release year"@en ;
+    rdfs:range xsd:long .
+
+:runtimeMinutes    a owl:DatatypeProperty ; 
+    rdfs:domain :Adaptation ;
+    rdfs:label "runtime (minutes)"@en ;
+    rdfs:range xsd:long .
+
+:seriesStatus    a owl:DatatypeProperty ; 
+    rdfs:domain :Series ;
+    rdfs:label "series status"@en ;
+    rdfs:range xsd:string .
+
+:startedYear    a owl:DatatypeProperty ; 
+    rdfs:domain :Series ;
+    rdfs:label "started year"@en ;
+    rdfs:range xsd:long .
+
+:wrote    a owl:ObjectProperty ; 
+    rdfs:comment "An author wrote a book."@en ;
+    rdfs:domain :Author ;
+    rdfs:label "wrote"@en ;
+    rdfs:range :Book .
+
+:sh\/Adaptation    a sh:NodeShape ; 
+    sh:property :sh\/Adaptation-basedOn, :sh\/Adaptation-releaseYear ;
+    sh:targetClass :Adaptation .
+
+:sh\/Adaptation-basedOn    a sh:PropertyShape ; 
+    sh:class :Book ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path :basedOn .
+
+:sh\/Adaptation-releaseYear    a sh:PropertyShape ; 
+    sh:datatype xsd:long ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path :releaseYear .
+
+:sh\/Author    a sh:NodeShape ; 
+    sh:property :sh\/Author-birthYear, :sh\/Author-label, :sh\/Author-wrote ;
+    sh:targetClass :Author .
+
+:sh\/Author-birthYear    a sh:PropertyShape ; 
+    sh:datatype xsd:long ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path :birthYear .
+
+:sh\/Author-label    a sh:PropertyShape ; 
+    sh:datatype xsd:string ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path rdfs:label .
+
+:sh\/Author-wrote    a sh:PropertyShape ; 
+    sh:class :Book ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path :wrote .
+
+:sh\/Book    a sh:NodeShape ; 
+    sh:property :sh\/Book-isbn, :sh\/Book-label, :sh\/Book-partOf, :sh\/Book-publicationYear ;
+    sh:targetClass :Book .
+
+:sh\/Book-isbn    a sh:PropertyShape ; 
+    sh:datatype xsd:string ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path :isbn ;
+    sh:pattern "^[0-9]{13}$" .
+
+:sh\/Book-label    a sh:PropertyShape ; 
+    sh:datatype xsd:string ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path rdfs:label .
+
+:sh\/Book-partOf    a sh:PropertyShape ; 
+    sh:class :Series ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path :partOf .
+
+:sh\/Book-publicationYear    a sh:PropertyShape ; 
+    sh:datatype xsd:long ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path :publicationYear .
+
+:sh\/Series    a sh:NodeShape ; 
+    sh:property :sh\/Series-label ;
+    sh:targetClass :Series .
+
+:sh\/Series-label    a sh:PropertyShape ; 
+    sh:datatype xsd:string ;
+    sh:minCount "1"^^xsd:integer ;
+    sh:path rdfs:label .
+

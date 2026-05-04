@@ -1,0 +1,40 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://data.treehouse.example/>
+
+### Inverse properties
+
+# Inverse of :wrote, every book has a :writtenBy back-pointer to its author.
+[?book, :writtenBy, ?author] :- [?author, :wrote, ?book] .
+
+# Inverse of :partOf, a series points back to all the books in it.
+[?series, :hasBook, ?book] :- [?book, :partOf, ?series] .
+
+
+### Adaptations and authors 
+# Books only know their author; adaptations only know their book. These rules
+# bridge the two so we can ask "what did Tolkien inspire on screen?" directly.
+
+[?adaptation, :inspiredBy, ?author] :-
+    [?adaptation, :basedOn, ?book],
+    [?author, :wrote, ?book] .
+
+[?author, :hasAdaptation, ?adaptation] :-
+    [?adaptation, :inspiredBy, ?author] .
+
+# Sibling adaption: two works based on the same book (work)
+[?a1, :siblingAdaptation, ?a2] :-
+    [?a1, :basedOn, ?b],
+    [?a2, :basedOn, ?b],
+    FILTER(?a1 != ?a2) .
+
+
+### Class-membership rules 
+# Tag any book with at least one adaptation as an :AdaptedWork.
+[?book, rdf:type, :AdaptedWork] :-
+    [?adaptation, :basedOn, ?book] .
+
+# Books from 1980 onwards are :ModernEraBook.
+[?book, rdf:type, :ModernEraBook] :-
+    [?book, rdf:type, :Book],
+    [?book, :publicationYear, ?year],
+    FILTER(?year >= 1980) .

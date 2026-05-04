@@ -1,0 +1,17 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# All books grouped by author, ordered chronologically.
+# Useful for the "let's look at our data" moment in the masterclass.
+
+SELECT ?author_name ?title ?year ?series_name
+WHERE {
+    ?author a :Author ;
+            rdfs:label ?author_name ;
+            :wrote ?book .
+    ?book rdfs:label ?title ;
+          :publicationYear ?year ;
+          :partOf ?series .
+    ?series rdfs:label ?series_name .
+}
+ORDER BY ?author_name ?year

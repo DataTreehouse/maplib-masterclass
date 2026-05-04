@@ -1,0 +1,21 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Replace the literal :adaptationType string on each :Adaptation with
+# a structured :hasAdaptationType link to the matching SKOS concept.
+
+DELETE {
+    ?adaptation :adaptationType ?type_string .
+}
+INSERT {
+    ?adaptation :hasAdaptationType ?concept .
+}
+WHERE {
+    ?adaptation a :Adaptation ;
+                :adaptationType ?type_string .
+    ?concept a skos:Concept ;
+             skos:inScheme :AdaptationTypeScheme ;
+             skos:prefLabel ?label .
+    FILTER(STR(?label) = ?type_string)
+}

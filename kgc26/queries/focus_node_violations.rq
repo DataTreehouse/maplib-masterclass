@@ -1,0 +1,10 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+# Pull the focus nodes that violated SHACL constraints from the
+# validation report graph.
+
+SELECT DISTINCT ?focusNode 
+WHERE {
+    ?result a sh:ValidationResult ;
+            sh:focusNode ?focusNode .
+}

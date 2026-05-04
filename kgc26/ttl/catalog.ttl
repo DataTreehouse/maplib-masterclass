@@ -1,0 +1,85 @@
+@prefix : <http://data.treehouse.example/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    DCAT Catalog
+#    Describing the data sources used in this masterclass using
+#    DCAT (Data Catalog Vocabulary, W3C Recommendation).
+#    https://www.w3.org/TR/vocab-dcat-3/
+#
+#    DCAT provides a standardised way to describe datasets, their
+#    distributions (file formats) and the catalog that groups them.
+#    This metadata travels with the knowledge graph — any system
+#    that speaks DCAT can discover and understand these sources.
+#################################################################
+
+
+###  The Catalog itself
+
+:CreativeWorksCatalog rdf:type dcat:Catalog ;
+    dct:title "Fantasy & Sci-Fi Creative Works — Data Catalog"@en ;
+    dct:description "A catalog of the four data sources used in the creative-works masterclass: authors, series, books, and adaptations."@en ;
+    dct:publisher :2Treehouse ;
+    dcat:dataset :AuthorsDataset ,
+                 :SeriesDataset ,
+                 :BooksDataset ,
+                 :AdaptationsDataset .
+
+
+###  Authors — Parquet
+
+:AuthorsDataset rdf:type dcat:Dataset ;
+    dct:title "Author Master Data"@en ;
+    dct:description "Author records with name, birth/death year, nationality and literary era. Sourced as Parquet — the native columnar format of Databricks and lakehouse architectures."@en ;
+    dcat:theme :EraScheme ;
+    dcat:distribution :AuthorsDistribution .
+
+:AuthorsDistribution rdf:type dcat:Distribution ;
+    dcat:accessURL <file:///data/authors.parquet> ;
+    dcat:mediaType "application/vnd.apache.parquet" ;
+    dct:format "Parquet" .
+
+
+###  Series — CSV
+
+:SeriesDataset rdf:type dcat:Dataset ;
+    dct:title "Book Series Catalog"@en ;
+    dct:description "Series records with name, started year, status and a short description."@en ;
+    dcat:distribution :SeriesDistribution .
+
+:SeriesDistribution rdf:type dcat:Distribution ;
+    dcat:accessURL <file:///data/series.csv> ;
+    dcat:mediaType "text/csv" ;
+    dct:format "CSV" .
+
+
+###  Books — CSV
+
+:BooksDataset rdf:type dcat:Dataset ;
+    dct:title "Book Catalog"@en ;
+    dct:description "Book records with title, ISBN, author, series, position-in-series, publication year, page count and genre. Classic CSV flat-file exchange format."@en ;
+    dcat:theme :GenreScheme ;
+    dcat:distribution :BooksDistribution .
+
+:BooksDistribution rdf:type dcat:Distribution ;
+    dcat:accessURL <file:///data/books.csv> ;
+    dcat:mediaType "text/csv" ;
+    dct:format "CSV" .
+
+
+###  Adaptations — CSV
+
+:AdaptationsDataset rdf:type dcat:Dataset ;
+    dct:title "Adaptations Catalog"@en ;
+    dct:description "Films, TV series, radio plays and animated adaptations. Each links back to a source book."@en ;
+    dcat:theme :AdaptationTypeScheme ;
+    dcat:distribution :AdaptationsDistribution .
+
+:AdaptationsDistribution rdf:type dcat:Distribution ;
+    dcat:accessURL <file:///data/adaptations.csv> ;
+    dcat:mediaType "text/csv" ;
+    dct:format "CSV" .

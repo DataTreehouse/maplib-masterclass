@@ -1,0 +1,18 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Which books have been adapted, and into how many different media?
+#
+# Highlights the :AdaptedWork class that the Datalog rule tags onto
+# any book with at least one adaptation.
+
+SELECT ?title ?author_name (COUNT(DISTINCT ?adaptation) AS ?adaptation_count)
+WHERE {
+    ?book a :AdaptedWork ;
+          rdfs:label ?title ;
+          :writtenBy ?author .
+    ?author rdfs:label ?author_name .
+    ?adaptation :basedOn ?book .
+}
+GROUP BY ?title ?author_name
+ORDER BY DESC(?adaptation_count) ?title

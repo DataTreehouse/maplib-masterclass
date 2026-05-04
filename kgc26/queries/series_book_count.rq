@@ -1,0 +1,19 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# How many books are in each series? Which series is the longest in our
+# catalog?
+#
+# Run this BEFORE inference and AFTER inference to demonstrate that the
+# recursive :nextInSeries → :partOf rule actually fills the graph in.
+# (When books only have :nextInSeries and no :partOf, the pre-inference
+#  count is small; after infer() it should match the data.)
+
+SELECT ?series_name (COUNT(?book) AS ?book_count)
+WHERE {
+    ?book a :Book ;
+          :partOf ?series .
+    ?series rdfs:label ?series_name .
+}
+GROUP BY ?series_name
+ORDER BY DESC(?book_count) ?series_name

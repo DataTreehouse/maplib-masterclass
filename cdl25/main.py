@@ -1,5 +1,6 @@
 from maplib import Model
 from maplib import explore
+from utils import write_output
 from utils import print_count
 
 import parse_data as data
@@ -21,13 +22,13 @@ m.add_template(tpl)
 m.map(data.ns_tpl + "Planet", data.planets())
 m.map(data.ns_tpl + "Satellite", data.satellites())
 
-#print_count("mapping", m)
+print_count("mapping", m)
 
 
 ####################################### MERGE IN ONTOLOGY
 
-#m.read("ttl/ast.ttl")
-#print_count("merge with ontology", m)
+m.read("ttl/ast.ttl")
+print_count("merge with ontology", m)
 
 # Note to self: validate
 
@@ -36,14 +37,14 @@ m.map(data.ns_tpl + "Satellite", data.satellites())
 with open("queries/insert_planets_to_solar_system.rq", "r") as file:
     insert_planets_to_solar_system = file.read()
 
-#m.insert(insert_planets_to_solar_system)
+m.insert(insert_planets_to_solar_system)
 
 with open("queries/insert_individual.rq", "r") as file:
     insert_individual = file.read()
 
-#m.update(insert_individual)
+m.update(insert_individual)
 
-#print_count("insert queries", m)
+print_count("insert queries", m)
 
 
 ####################################### RULES
@@ -79,5 +80,5 @@ with open("queries/focus_node_violations.rq", "r") as file:
 
 ####################################### WRITE TO FILE
 
-m.write("ttl/out.ttl", format="turtle")
+write_output(m, "ttl/out.ttl")
 

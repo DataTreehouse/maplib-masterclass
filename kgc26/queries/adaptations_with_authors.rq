@@ -1,0 +1,25 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Adaptations and the authors whose work inspired them.
+#
+# Note: the ?author <-> ?adaptation link is INFERRED by the rule
+#     [?adaptation, :inspiredBy, ?author] :-
+#         [?adaptation, :basedOn, ?book],
+#         [?author, :wrote, ?book] .
+# in rule.dlog. Run this query before and after infer() to see the
+# difference.
+
+SELECT ?adaptation_title ?adaptation_type ?year ?director ?book_title ?author_name
+WHERE {
+    ?adaptation a :Adaptation ;
+                rdfs:label ?adaptation_title ;
+                :adaptationType ?adaptation_type ;
+                :releaseYear ?year ;
+                :director ?director ;
+                :basedOn ?book ;
+                :inspiredBy ?author .
+    ?book rdfs:label ?book_title .
+    ?author rdfs:label ?author_name .
+}
+ORDER BY ?author_name ?year

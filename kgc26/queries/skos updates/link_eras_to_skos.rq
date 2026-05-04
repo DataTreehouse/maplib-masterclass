@@ -1,0 +1,21 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Replace the literal :era string on each :Author with a structured
+# :hasEra link to the matching SKOS concept in the :EraScheme.
+
+DELETE {
+    ?author :era ?era_string .
+}
+INSERT {
+    ?author :hasEra ?concept .
+}
+WHERE {
+    ?author a :Author ;
+            :era ?era_string .
+    ?concept a skos:Concept ;
+             skos:inScheme :EraScheme ;
+             skos:prefLabel ?label .
+    FILTER(STR(?label) = ?era_string)
+}

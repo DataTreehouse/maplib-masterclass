@@ -1,0 +1,18 @@
+book_id,isbn,title,author_ref,series_ref,position_in_series,publication_year,page_count,genre
+hobbit,9780547928227,The Hobbit,tolkien,the_hobbit,1,1937,310,fantasy
+fellowship,9780547928210,The Fellowship of the Ring,tolkien,lotr,1,1954,423,fantasy
+two_towers,9780547928203,The Two Towers,tolkien,lotr,2,1954,352,fantasy
+return_king,9780547928197,The Return of the King,tolkien,lotr,3,1955,416,fantasy
+colour_of_magic,9780062225672,The Colour of Magic,pratchett,discworld,1,1983,285,comic_fantasy
+mort,9780062225719,Mort,pratchett,discworld,4,1987,272,comic_fantasy
+guards_guards,9780062225733,Guards! Guards!,pratchett,discworld,8,1989,320,comic_fantasy
+foundation,9780553293357,Foundation,asimov,foundation,1,1951,244,scifi
+foundation_empire,9780553293371,Foundation and Empire,asimov,foundation,2,1952,296,scifi
+second_foundation,9780553293364,Second Foundation,asimov,foundation,3,1953,256,scifi
+dune,9780441172719,Dune,herbert,dune_chronicles,1,1965,688,scifi
+dune_messiah,9780441172696,Dune Messiah,herbert,dune_chronicles,2,1969,336,scifi
+children_of_dune,9780441104024,Children of Dune,herbert,dune_chronicles,3,1976,444,scifi
+wizard_earthsea,9780547722023,A Wizard of Earthsea,le_guin,earthsea,1,1968,205,fantasy
+tombs_of_atuan,9780689845369,The Tombs of Atuan,le_guin,earthsea,2,1971,192,fantasy
+hhgtg,9780345391803,The Hitchhiker's Guide to the Galaxy,adams,hitchhikers,1,1979,224,comic_scifi
+restaurant,9780345391810,The Restaurant at the End of the Universe,adams,hitchhikers,2,1980,250,comic_scifi

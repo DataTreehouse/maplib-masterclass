@@ -1,0 +1,20 @@
+PREFIX : <http://data.treehouse.example/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Walk every :nextInSeries chain and print the books in reading order.
+#
+# This is the query that visualises what the recursive Datalog rule
+# actually traverses behind the scenes. Each row shows a single edge
+# in the chain (book → next book) within a series.
+
+SELECT ?series_name ?from_title ?to_title ?from_pos ?to_pos
+WHERE {
+    ?from :nextInSeries ?to ;
+          rdfs:label ?from_title ;
+          :positionInSeries ?from_pos ;
+          :partOf ?series .
+    ?to rdfs:label ?to_title ;
+        :positionInSeries ?to_pos .
+    ?series rdfs:label ?series_name .
+}
+ORDER BY ?series_name ?from_pos
