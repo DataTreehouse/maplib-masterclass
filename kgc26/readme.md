@@ -1,4 +1,4 @@
-# Fantasy & Sci-Fi Knowledge Graph--a maplib masterclass
+# A maplib masterclass using Fantasy & Sci-Fi Knowledge Graph
 
 A 1.5-hour walkthrough of the [maplib](https://github.com/DataTreehouse/maplib) pipeline, built around a small dataset of books, authors, series, and adaptations from fantasy and science fiction.
 
